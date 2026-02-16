@@ -1,5 +1,5 @@
 @echo off
-REM Batch file to commit kenbrownfc to GitHub
+REM Batch file to commit www.kenbrownfc.com to GitHub
 REM This script sets up git config, initializes the repo, and pushes to GitHub
 
 echo.

@@ -1,0 +1,29 @@
+# Local development tools
+flatten_site.py
+fix_links.py
+commit.bat
+
+# Claude Code
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Environment files
+.env
+.env.local
+
+# Dependencies
+node_modules/
+
+# Build artifacts
+dist/
+build/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo

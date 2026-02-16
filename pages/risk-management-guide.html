@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Management Guide - Wealth Protection</title>
+    <meta name="description" content="Comprehensive guide to personal risk management and mitigation strategies. Learn to identify financial risks and protect your wealth from threats.">
+    <link rel="stylesheet" href="../css/modern-design-system.css">
+    <link href="../css/chaty-front.min.css" id="chaty-front-css-css" media="all" rel="stylesheet"/>
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Risk Management Guide - Identifying and Mitigating Financial Risks",
+      "datePublished": "2026-02-16",
+      "dateModified": "2026-02-16",
+      "author": {
+        "@type": "Person",
+        "name": "Ken Brown"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ken Brown Financial Consultant"
+      },
+      "description": "Comprehensive guide to personal risk management and mitigation strategies. Learn to identify financial risks and protect your wealth from threats."
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is personal financial risk management?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Personal financial risk management is the process of identifying threats to your financial security and implementing strategies to minimize their impact. It involves understanding income risk, health risk, market risk, liability risk, and other threats, then deciding which risks to accept, reduce, transfer (through insurance), or avoid entirely."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much emergency fund do I need for risk management?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Build 3-6 months of essential living expenses in liquid savings as your first line of defense. If you have unstable income, are self-employed, have dependents, or work in a volatile industry, aim for 6-12 months of expenses. This protects you from income disruptions without forcing you into debt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the four main risk management strategies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The four main strategies are: 1) Risk Avoidance - eliminating activities that create the risk, 2) Risk Reduction - taking action to decrease likelihood or impact, 3) Risk Transfer - using insurance or contracts to shift risk to another party, and 4) Risk Retention - accepting the risk and being prepared financially. Most situations benefit from combining multiple strategies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of insurance are essential for risk management?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Essential insurance includes: health insurance (medical expenses), disability insurance (income protection), life insurance (if you have dependents), property insurance (home/auto), liability insurance (legal claims), and umbrella coverage (additional liability protection for significant assets). The specific types and amounts depend on your individual situation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I assess my personal financial risks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Complete a personal risk assessment by: 1) Evaluating income stability and employment security, 2) Considering health and disability risks based on family history and occupation, 3) Reviewing assets exposed to damage or loss, 4) Analyzing liability exposure from property ownership or business activities, 5) Assessing longevity risk and retirement savings adequacy. Rate each risk's likelihood and potential financial impact as high/medium/low."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is diversification and why is it important for risk management?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Diversification means spreading risk across multiple investments, income sources, or asset types. It's critical because it prevents catastrophic loss if one investment fails or one income source disappears. Diversify across asset classes (stocks, bonds, real estate), sectors (technology, healthcare, consumer goods), and geographic regions. Apply the same principle to income by developing multiple revenue streams."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What additional risks do expats face?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Expats face unique risks including: currency risk (exchange rate fluctuations affecting asset values), regulatory risk (changing tax laws in multiple countries), geopolitical risk (political changes affecting residency), visa/residency risk (immigration status changes), healthcare access (coverage in multiple countries), and compliance risk (FATCA, FBAR, and foreign tax reporting). Working with advisors familiar with cross-border situations is essential."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should I review my risk management plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Review your risk management plan annually as a baseline. Also review whenever major life changes occur: marriage, divorce, birth of children, job change, starting a business, purchasing property, significant income increase, or relocation. Your risk profile changes as your life circumstances evolve, so your protection strategies must adapt accordingly."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .breadcrumb { padding: var(--spacing-lg) 0; color: var(--neutral-dark-gray); font-size: var(--text-sm); }
+        .breadcrumb a { color: var(--accent-gold); margin: 0 var(--spacing-sm); }
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--dark-navy) 100%);
+            color: var(--neutral-white);
+            padding: var(--spacing-4xl) var(--spacing-xl);
+            text-align: center;
+        }
+        .page-hero h1 { font-size: var(--text-5xl); margin-bottom: var(--spacing-md); }
+        .page-hero p { font-size: var(--text-xl); opacity: 0.9; }
+        .content-section { max-width: 1000px; margin: 0 auto; }
+        .topic-section { margin-bottom: var(--spacing-4xl); padding: var(--spacing-3xl); background: var(--neutral-white); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+        .topic-section h2 { color: var(--primary-navy); border-bottom: 3px solid var(--accent-gold); padding-bottom: var(--spacing-md); margin-bottom: var(--spacing-2xl); }
+        .topic-section h3 { color: var(--accent-gold); margin-top: var(--spacing-2xl); margin-bottom: var(--spacing-lg); }
+        .risk-box { background: linear-gradient(135deg, rgba(212, 165, 116, 0.1), rgba(255, 140, 66, 0.1)); border-left: 4px solid var(--accent-gold); padding: var(--spacing-lg); margin: var(--spacing-2xl) 0; border-radius: var(--radius-md); }
+        .cta-inline { text-align: center; margin: var(--spacing-3xl) 0; padding: var(--spacing-2xl); background: var(--neutral-light-gray); border-radius: var(--radius-lg); }
+        ul:not(.navbar-menu), ol { margin-left: var(--spacing-2xl); margin-bottom: var(--spacing-lg); }
+        ul:not(.navbar-menu) li, ol li { margin-bottom: var(--spacing-md); line-height: 1.8; }
+        .highlight { color: var(--accent-gold); font-weight: 600; }
+
+        .content-freshness {
+            text-align: center;
+            padding: var(--spacing-md);
+            background: var(--neutral-light-gray);
+            border-top: 2px solid var(--accent-gold);
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .content-freshness small {
+            color: var(--neutral-dark-gray);
+            font-weight: 500;
+        }
+
+        .faq-item {
+            margin-bottom: var(--spacing-2xl);
+            padding-bottom: var(--spacing-2xl);
+            border-bottom: 1px solid var(--neutral-gray);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            color: var(--primary-navy);
+            font-weight: 600;
+            font-size: var(--text-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .faq-answer {
+            color: var(--neutral-dark-gray);
+            line-height: 1.8;
+        }
+
+        .section-light {
+            background: var(--neutral-light-gray);
+            padding: var(--spacing-4xl) var(--spacing-xl);
+            margin-top: var(--spacing-4xl);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-2xl);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .service-card {
+            background: var(--neutral-white);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card h3 {
+            color: var(--primary-navy);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .service-card p {
+            color: var(--neutral-dark-gray);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .service-card .btn {
+            display: inline-block;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand"><a href="../index-modern-final.html" style="color: inherit; text-decoration: none;">Ken Brown Financial Consultant</a></div>
+            <ul class="navbar-menu">
+                <li><a href="../index-modern-final.html#about" class="navbar-link">About Ken</a></li>
+                <li><a href="../index-modern-final.html#services" class="navbar-link">Services</a></li>
+                <li><a href="../index-modern-final.html#expertise" class="navbar-link">Expertise</a></li>
+                <li><a href="../index-modern-final.html#contact" class="navbar-link">Contact</a></li>
+                <li><a href="wills-estate-planning-expats.html" class="navbar-link">Wills & Estate</a></li>
+                <li><a href="https://m.me/kenbrownfc" class="navbar-cta">CONTACT KEN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Risk Management Guide</h1>
+            <p>Identifying and Mitigating Financial Risks</p>
+        </div>
+    </section>
+
+    <!-- Freshness Indicator -->
+    <div class="content-freshness">
+        <small>📅 Last Updated: February 16, 2026 | ⏱️ 8 min read</small>
+    </div>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index-modern-final.html">Home</a> / <span>Risk Management</span>
+            </div>
+
+            <div class="topic-section">
+                <h2>Understanding Personal Financial Risk</h2>
+                <p>Risk management is about identifying threats to your financial security and implementing strategies to minimize their impact. Every financial situation involves various risks that can derail your wealth-building goals if not properly managed.</p>
+
+                <div class="risk-box">
+                    <strong>Key Concept:</strong> Risk management doesn't mean eliminating all risk—it means understanding what risks you face and making informed decisions about which risks to accept, reduce, transfer, or avoid.
+                </div>
+
+                <h3>Types of Personal Financial Risks</h3>
+                <ul>
+                    <li><span class="highlight">Income Risk:</span> Loss of employment or income reduction</li>
+                    <li><span class="highlight">Health Risk:</span> Medical emergencies or serious illness</li>
+                    <li><span class="highlight">Longevity Risk:</span> Living longer than anticipated</li>
+                    <li><span class="highlight">Market Risk:</span> Investment losses due to market downturns</li>
+                    <li><span class="highlight">Inflation Risk:</span> Rising prices reducing purchasing power</li>
+                    <li><span class="highlight">Liability Risk:</span> Legal claims or lawsuits</li>
+                    <li><span class="highlight">Property Risk:</span> Damage to home or possessions</li>
+                </ul>
+            </div>
+
+            <div class="cta-inline">
+                <h3 style="color: var(--primary-navy); margin-bottom: var(--spacing-lg);">Evaluate Your Financial Risks</h3>
+                <a href="https://wa.me/66910571270" class="btn btn-secondary">CONNECT VIA WHATSAPP</a>
+            </div>
+
+            <div class="topic-section">
+                <h2>Risk Identification Process</h2>
+
+                <h3>Step 1: Assess Your Income Stability</h3>
+                <p>Evaluate employment security, industry trends, and income diversification. How secure is your primary income? Do you have alternative income sources?</p>
+
+                <h3>Step 2: Evaluate Health & Disability Risks</h3>
+                <p>Consider family health history, occupation hazards, and current health status. Without income protection, a disability could be financially devastating.</p>
+
+                <h3>Step 3: Review Asset Exposure</h3>
+                <p>Identify assets at risk from damage, theft, or loss. What would happen if your home, vehicles, or business were damaged?</p>
+
+                <h3>Step 4: Analyze Liability Exposure</h3>
+                <p>Consider situations where you might be sued. Business ownership, property ownership, and personal activities all create potential liability.</p>
+
+                <h3>Step 5: Consider Longevity Risk</h3>
+                <p>How long will your retirement savings last? Are you adequately saving for a potentially long retirement?</p>
+
+                <div class="risk-box">
+                    <strong>Assessment Tool:</strong> Complete a personal risk assessment by listing each risk type and rating its likelihood (high/medium/low) and potential financial impact (high/medium/low).
+                </div>
+            </div>
+
+            <div class="topic-section">
+                <h2>Risk Management Strategies</h2>
+
+                <h3>Risk Avoidance</h3>
+                <p>Eliminate the activity or situation that creates the risk. Example: Don't start a business venture you don't understand.</p>
+
+                <h3>Risk Reduction</h3>
+                <p>Take action to decrease the likelihood or impact of risk. Example: Install security systems to reduce theft risk.</p>
+
+                <h3>Risk Transfer</h3>
+                <p>Use insurance or contracts to shift risk to another party. This is the most common strategy for personal risks.</p>
+
+                <h3>Risk Retention</h3>
+                <p>Accept the risk and be prepared financially. Usually applies to small risks where insurance costs more than potential loss.</p>
+
+                <h3>Diversification</h3>
+                <p>Spread risk across multiple investments, income sources, or asset types. Don't put all resources in one place.</p>
+
+                <div class="risk-box">
+                    <strong>Best Practice:</strong> Use a combination of strategies. For major health risks: combination of health insurance (transfer) + healthy lifestyle (reduction) + emergency fund (retention) + regular checkups (reduction).
+                </div>
+            </div>
+
+            <div class="cta-inline">
+                <h3 style="color: var(--primary-navy); margin-bottom: var(--spacing-lg);">Create Your Risk Management Plan</h3>
+                <p style="margin-bottom: var(--spacing-lg); color: var(--neutral-dark-gray);">A comprehensive risk management strategy protects everything you've worked to build.</p>
+                <a href="https://m.me/kenbrownfc" class="btn btn-primary">SCHEDULE CONSULTATION</a>
+            </div>
+
+            <div class="topic-section">
+                <h2>Building Financial Resilience</h2>
+
+                <h3>Emergency Fund Foundation</h3>
+                <p>Build 3-6 months of essential expenses in liquid savings. This is your first line of defense against income disruptions.</p>
+
+                <h3>Insurance Portfolio</h3>
+                <p>Maintain appropriate insurance across all major risk categories: health, disability, life, property, and liability.</p>
+
+                <h3>Income Diversification</h3>
+                <p>Develop multiple income sources. This reduces dependence on any single employment or business.</p>
+
+                <h3>Investment Diversification</h3>
+                <p>Spread investments across asset classes, sectors, and geographic regions to reduce market risk.</p>
+
+                <h3>Regular Reviews & Adjustments</h3>
+                <p>Life changes (marriage, children, career changes, business ventures) create new risks. Review your risk management plan annually.</p>
+
+                <h3>Professional Guidance</h3>
+                <p>Work with specialists to address complex risks (tax planning, legal structures, insurance optimization).</p>
+            </div>
+
+            <div class="topic-section">
+                <h2>Special Considerations for Expats</h2>
+
+                <p>If you're an expat or have cross-border financial interests, you face additional risks:</p>
+
+                <ul>
+                    <li><span class="highlight">Currency Risk:</span> Exchange rate fluctuations affecting asset values</li>
+                    <li><span class="highlight">Regulatory Risk:</span> Changing tax laws and regulations in multiple countries</li>
+                    <li><span class="highlight">Geopolitical Risk:</span> Political changes affecting residency or investments</li>
+                    <li><span class="highlight">Visa/Residency Risk:</span> Changes to immigration status or visa requirements</li>
+                    <li><span class="highlight">Healthcare Access:</span> Ensuring adequate coverage in multiple countries</li>
+                </ul>
+
+                <div class="risk-box">
+                    <strong>Expat Strategy:</strong> Work with advisors familiar with cross-border situations to address tax optimization, compliance, and protection strategies specific to your circumstances.
+                </div>
+            </div>
+
+            <div class="cta-inline">
+                <h3 style="color: var(--primary-navy); margin-bottom: var(--spacing-lg);">Optimize Your Risk Management</h3>
+                <a href="https://m.me/kenbrownfc" class="btn btn-primary">SCHEDULE CONSULTATION</a>
+            </div>
+
+            <div class="topic-section">
+                <h2>Next Steps</h2>
+
+                <p>Effective risk management is an ongoing process:</p>
+
+                <ul>
+                    <li>Complete a personal risk assessment identifying major threats</li>
+                    <li>Review current insurance and protection coverage</li>
+                    <li>Build or strengthen your emergency fund</li>
+                    <li>Diversify income and investment sources</li>
+                    <li>Work with professionals to address complex risks</li>
+                    <li>Review and update your plan annually</li>
+                </ul>
+
+                <div class="risk-box">
+                    <strong>Schedule a Consultation:</strong> Ken Brown Financial Consultant specializes in comprehensive risk assessment and management planning. Contact Ken to discuss your specific risk situation and develop a customized strategy.
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="topic-section">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">What is personal financial risk management?</div>
+                    <div class="faq-answer">Personal financial risk management is the process of identifying threats to your financial security and implementing strategies to minimize their impact. It involves understanding income risk, health risk, market risk, liability risk, and other threats, then deciding which risks to accept, reduce, transfer (through insurance), or avoid entirely.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How much emergency fund do I need for risk management?</div>
+                    <div class="faq-answer">Build 3-6 months of essential living expenses in liquid savings as your first line of defense. If you have unstable income, are self-employed, have dependents, or work in a volatile industry, aim for 6-12 months of expenses. This protects you from income disruptions without forcing you into debt.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What are the four main risk management strategies?</div>
+                    <div class="faq-answer">The four main strategies are: 1) Risk Avoidance - eliminating activities that create the risk, 2) Risk Reduction - taking action to decrease likelihood or impact, 3) Risk Transfer - using insurance or contracts to shift risk to another party, and 4) Risk Retention - accepting the risk and being prepared financially. Most situations benefit from combining multiple strategies.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What types of insurance are essential for risk management?</div>
+                    <div class="faq-answer">Essential insurance includes: health insurance (medical expenses), disability insurance (income protection), life insurance (if you have dependents), property insurance (home/auto), liability insurance (legal claims), and umbrella coverage (additional liability protection for significant assets). The specific types and amounts depend on your individual situation.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I assess my personal financial risks?</div>
+                    <div class="faq-answer">Complete a personal risk assessment by: 1) Evaluating income stability and employment security, 2) Considering health and disability risks based on family history and occupation, 3) Reviewing assets exposed to damage or loss, 4) Analyzing liability exposure from property ownership or business activities, 5) Assessing longevity risk and retirement savings adequacy. Rate each risk's likelihood and potential financial impact as high/medium/low.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What is diversification and why is it important for risk management?</div>
+                    <div class="faq-answer">Diversification means spreading risk across multiple investments, income sources, or asset types. It's critical because it prevents catastrophic loss if one investment fails or one income source disappears. Diversify across asset classes (stocks, bonds, real estate), sectors (technology, healthcare, consumer goods), and geographic regions. Apply the same principle to income by developing multiple revenue streams.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What additional risks do expats face?</div>
+                    <div class="faq-answer">Expats face unique risks including: currency risk (exchange rate fluctuations affecting asset values), regulatory risk (changing tax laws in multiple countries), geopolitical risk (political changes affecting residency), visa/residency risk (immigration status changes), healthcare access (coverage in multiple countries), and compliance risk (FATCA, FBAR, and foreign tax reporting). Working with advisors familiar with cross-border situations is essential.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How often should I review my risk management plan?</div>
+                    <div class="faq-answer">Review your risk management plan annually as a baseline. Also review whenever major life changes occur: marriage, divorce, birth of children, job change, starting a business, purchasing property, significant income increase, or relocation. Your risk profile changes as your life circumstances evolve, so your protection strategies must adapt accordingly.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Content Section -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--primary-navy); margin-bottom: var(--spacing-2xl);">Related Resources</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Insurance Coverage Guide</h3>
+                    <p>Understand essential personal insurance coverage types including life, health, property, and liability insurance to protect your wealth and family.</p>
+                    <a href="insurance-coverage-guide.html" class="btn btn-secondary">READ MORE</a>
+                </div>
+                <div class="service-card">
+                    <h3>Claims & Protection</h3>
+                    <p>Navigate the insurance claims process effectively, understand documentation requirements, and ensure you receive the coverage you've paid for.</p>
+                    <a href="claims-and-protection.html" class="btn btn-secondary">READ MORE</a>
+                </div>
+                <div class="service-card">
+                    <h3>Wills & Estate Planning</h3>
+                    <p>Protect your legacy through comprehensive estate planning, including wills, trusts, and strategies for American expats living abroad.</p>
+                    <a href="wills-estate-planning-expats.html" class="btn btn-secondary">READ MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+<div class="footer-content" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr; max-width: 1400px;">
+<div class="footer-section">
+<h4>Ken Brown Financial Consultant</h4>
+<p style="color: rgba(255, 255, 255, 0.7); margin-bottom: var(--spacing-md);">Expert wealth management for American expats. Based in Thailand with global reach.</p>
+<p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 0; font-size: var(--text-sm); line-height: 1.6;"><strong>Consultation:</strong> Relationships begin with an initial discussion and a get to know each other meeting. We like to understand our clients properly from the outset and that starts by getting to know their basic needs. That allows both parties to get comfortable with each other, and make an informed decision about working together.</p>
+</div>
+<div class="footer-section">
+<h4>Tax &amp; Retirement</h4>
+<div class="footer-links">
+<a class="footer-link" href="tax-planning-expats.html">Tax Planning</a>
+<a class="footer-link" href="retirement-planning-expats.html">Retirement Planning</a>
+<a class="footer-link" href="expat-resources-thailand.html">Expat Resources</a>
+</div>
+<h4 style="margin-top: var(--spacing-lg);">Getting Started</h4>
+<div class="footer-links">
+<a class="footer-link" href="financial-101.html">Financial 101</a>
+<a class="footer-link" href="getting-started-guide.html">Getting Started</a>
+</div>
+</div>
+<div class="footer-section">
+<h4>Investment &amp; Wealth</h4>
+<div class="footer-links">
+<a class="footer-link" href="investment-strategy-expats.html">Investment Strategy</a>
+<a class="footer-link" href="trust-services.html">Trust Services</a>
+<a class="footer-link" href="property-real-estate.html">Property &amp; Real Estate</a>
+<a class="footer-link" href="corporate-services.html">Corporate Services</a>
+</div>
+</div>
+<div class="footer-section">
+<h4>Protection &amp; Estate</h4>
+<div class="footer-links">
+<a class="footer-link" href="wills-estate-planning-expats.html">Wills &amp; Estate</a>
+<a class="footer-link" href="insurance-coverage-guide.html">Insurance Coverage</a>
+<a class="footer-link" href="risk-management-guide.html">Risk Management</a>
+<a class="footer-link" href="claims-and-protection.html">Claims &amp; Protection</a>
+</div>
+</div>
+<div class="footer-section">
+<h4>Connect</h4>
+<div class="footer-links">
+<a class="footer-link" href="https://www.linkedin.com/in/ken-brown-59438192/">LinkedIn</a>
+<a class="footer-link" href="https://m.me/kenbrownfc">Messenger</a>
+<a class="footer-link" href="https://wa.me/66910571270">WhatsApp</a>
+<a class="footer-link" href="tel:+66910571270">Phone</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Ken Brown Financial Consultant. All rights reserved.</p>
+</div>
+</footer>
+
+    <!-- Chaty Widget Settings -->
+    <script id="chaty-front-end-js-extra">
+var chaty_settings = {"ajax_url":"https://www.kenbrownfc.com/wp-admin/admin-ajax.php","analytics":"0","capture_analytics":"0","token":"2b86fe6805","chaty_widgets":[{"id":0,"identifier":0,"settings":{"cta_type":"simple-view","cta_body":"","cta_head":"","cta_head_bg_color":"","cta_head_text_color":"","show_close_button":1,"position":"left","custom_position":1,"bottom_spacing":"25","side_spacing":"25","icon_view":"vertical","default_state":"hover","cta_text":"Talk to Ken","cta_text_color":"#333333","cta_bg_color":"#ffffff","show_cta":"first_click","is_pending_mesg_enabled":"off","pending_mesg_count":"1","pending_mesg_count_color":"#ffffff","pending_mesg_count_bgcolor":"#dd0000","widget_icon":"chat-base","widget_icon_url":"","font_family":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","widget_size":"54","custom_widget_size":"54","is_google_analytics_enabled":0,"close_text":"Hide","widget_color":"#4F6ACA","widget_icon_color":"#ffffff","widget_rgb_color":"79,106,202","has_custom_css":0,"custom_css":"","widget_token":"27b36e6569","widget_index":"","attention_effect":""},"triggers":{"has_time_delay":1,"time_delay":"1","exit_intent":0,"has_display_after_page_scroll":0,"display_after_page_scroll":"0","auto_hide_widget":0,"hide_after":0,"show_on_pages_rules":[],"time_diff":0,"has_date_scheduling_rules":0,"date_scheduling_rules":{"start_date_time":"","end_date_time":""},"date_scheduling_rules_timezone":0,"day_hours_scheduling_rules_timezone":0,"has_day_hours_scheduling_rules":[],"day_hours_scheduling_rules":[],"day_time_diff":0,"show_on_direct_visit":0,"show_on_referrer_social_network":0,"show_on_referrer_search_engines":0,"show_on_referrer_google_ads":0,"show_on_referrer_urls":[],"has_show_on_specific_referrer_urls":0,"has_traffic_source":0,"has_countries":0,"countries":[],"has_target_rules":0},"channels":[{"channel":"Facebook_Messenger","value":"https://m.me/kenbrownfc","hover_text":"Facebook Messenger","chatway_position":"","svg_icon":"\u003Csvg width=\"39\" height=\"39\" viewBox=\"0 0 39 39\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003E\u003Ccircle class=\"color-element\" cx=\"19.4395\" cy=\"19.4395\" r=\"19.4395\" fill=\"#1E88E5\"/\u003E\u003Cpath fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M0 9.63934C0 4.29861 4.68939 0 10.4209 0C16.1524 0 20.8418 4.29861 20.8418 9.63934C20.8418 14.98 16.1524 19.2787 10.4209 19.2787C9.37878 19.2787 8.33673 19.1484 7.42487 18.8879L3.90784 20.8418V17.1945C1.56311 15.3708 0 12.6353 0 9.63934ZM8.85779 10.1604L11.463 13.0261L17.1945 6.90384L12.1143 9.76959L9.37885 6.90384L3.64734 13.0261L8.85779 10.1604Z\" transform=\"translate(9.01854 10.3146)\" fill=\"white\"/\u003E\u003C/svg\u003E","is_desktop":1,"is_mobile":1,"icon_color":"#1E88E5","icon_rgb_color":"30,136,229","channel_type":"Facebook_Messenger","custom_image_url":"","order":"","pre_set_message":"","is_use_web_version":"1","is_open_new_tab":"1","is_default_open":"0","has_welcome_message":"0","emoji_picker":"1","input_placeholder":"Write your message...","chat_welcome_message":"","wp_popup_headline":"","wp_popup_nickname":"","wp_popup_profile":"","wp_popup_head_bg_color":"#4AA485","qr_code_image_url":"","mail_subject":"","channel_account_type":"personal","contact_form_settings":[],"contact_fields":[],"url":"https://m.me/kenbrownfc","mobile_target":"","desktop_target":"_blank","target":"_blank","is_agent":0,"agent_data":[],"header_text":"","header_sub_text":"","header_bg_color":"","header_text_color":"","widget_token":"27b36e6569","widget_index":"","click_event":"","viber_url":""},{"channel":"Whatsapp","value":"66910571270","hover_text":"WhatsApp","chatway_position":"","svg_icon":"\u003Csvg width=\"39\" height=\"39\" viewBox=\"0 0 39 39\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003E\u003Ccircle class=\"color-element\" cx=\"19.4395\" cy=\"19.4395\" r=\"19.4395\" fill=\"#49E670\"/\u003E\u003Cpath d=\"M12.9821 10.1115C12.7029 10.7767 11.5862 11.442 10.7486 11.575C10.1902 11.7081 9.35269 11.8411 6.84003 10.7767C3.48981 9.44628 1.39593 6.25317 1.25634 6.12012C1.11674 5.85403 2.13001e-06 4.39053 2.13001e-06 2.92702C2.13001e-06 1.46351 0.83755 0.665231 1.11673 0.399139C1.39592 0.133046 1.8147 1.01506e-06 2.23348 1.01506e-06C2.37307 1.01506e-06 2.51267 1.01506e-06 2.65226 1.01506e-06C2.93144 1.01506e-06 3.21063 -2.02219e-06 3.35022 0.532183C3.62941 1.19741 4.32736 2.66092 4.32736 2.79397C4.46696 2.92702 4.46696 3.19311 4.32736 3.32616C4.18777 3.59225 4.18777 3.59224 3.90858 3.85834C3.76899 3.99138 3.6294 4.12443 3.48981 4.39052C3.35022 4.52357 3.21063 4.78966 3.35022 5.05576C3.48981 5.32185 4.18777 6.38622 5.16491 7.18449C6.42125 8.24886 7.39839 8.51496 7.81717 8.78105C8.09636 8.91409 8.37554 8.9141 8.65472 8.648C8.93391 8.38191 9.21309 7.98277 9.49228 7.58363C9.77146 7.31754 10.0507 7.1845 10.3298 7.31754C10.609 7.45059 12.2841 8.11582 12.5633 8.38191C12.8425 8.51496 13.1217 8.648 13.1217 8.78105C13.1217 8.78105 13.1217 9.44628 12.9821 10.1115Z\" transform=\"translate(12.9597 12.9597)\" fill=\"#FAFAFA\"/\u003E\u003Cpath d=\"M0.196998 23.295L0.131434 23.4862L0.323216 23.4223L5.52771 21.6875C7.4273 22.8471 9.47325 23.4274 11.6637 23.4274C18.134 23.4274 23.4274 18.134 23.4274 11.6637C23.4274 5.19344 18.134 -0.1 11.6637 -0.1C5.19344 -0.1 -0.1 5.19344 -0.1 11.6637C-0.1 13.9996 0.624492 16.3352 1.93021 18.2398L0.196998 23.295ZM5.87658 19.8847L5.84025 19.8665L5.80154 19.8788L2.78138 20.8398L3.73978 17.9646L3.75932 17.906L3.71562 17.8623L3.43104 17.5777C2.27704 15.8437 1.55796 13.8245 1.55796 11.6637C1.55796 6.03288 6.03288 1.55796 11.6637 1.55796C17.2945 1.55796 21.7695 6.03288 21.7695 11.6637C21.7695 17.2945 17.2945 21.7695 11.6637 21.7695C9.64222 21.7695 7.76778 21.1921 6.18227 20.039L6.17557 20.0342L6.16817 20.0305L5.87658 19.8847Z\" transform=\"translate(7.7758 7.77582)\" fill=\"white\" stroke=\"white\" stroke-width=\"0.2\"/\u003E\u003C/svg\u003E","is_desktop":1,"is_mobile":1,"icon_color":"#49E670","icon_rgb_color":"73,230,112","channel_type":"Whatsapp","custom_image_url":"","order":"","pre_set_message":"","is_use_web_version":"1","is_open_new_tab":"1","is_default_open":"0","has_welcome_message":"0","emoji_picker":"1","input_placeholder":"Write your message...","chat_welcome_message":"\u003Cp\u003EHow can I help you? :)\u003C/p\u003E","wp_popup_headline":"","wp_popup_nickname":"","wp_popup_profile":"","wp_popup_head_bg_color":"#4AA485","qr_code_image_url":"","mail_subject":"","channel_account_type":"personal","contact_form_settings":[],"contact_fields":[],"url":"https://web.whatsapp.com/send?phone=66910571270","mobile_target":"","desktop_target":"_blank","target":"_blank","is_agent":0,"agent_data":[],"header_text":"","header_sub_text":"","header_bg_color":"","header_text_color":"","widget_token":"27b36e6569","widget_index":"","click_event":"","viber_url":""}]}],"data_analytics_settings":"off","lang":{"whatsapp_label":"WhatsApp Message","hide_whatsapp_form":"Hide WhatsApp Form","emoji_picker":"Show Emojis"},"has_chatway":""};
+//# sourceURL=chaty-front-end-js-extra
+    </script>
+    <script defer="" id="chaty-front-end-js" src="../scripts/cht-front-script.min.js"></script>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+<script src="../scripts/chaty-widget.js"></script>
+</body>
+</html>
