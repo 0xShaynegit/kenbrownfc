@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trust Services for Expats - Asset Protection & Estate Planning - Ken Brown</title>
     <meta name="description" content="Trust planning and administration for American expats. Protect assets, minimize taxes, and ensure smooth wealth transfer across international jurisdictions.">
+    <link rel="canonical" href="https://www.kenbrownfc.com/pages/trust-services.html">
     <link rel="stylesheet" href="../css/modern-design-system.css">
 
     <script type="application/ld+json">
@@ -66,19 +67,101 @@
 <link href="../css/chaty-front.min.css" id="chaty-front-css-css" media="all" rel="stylesheet"/>
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
         <div class="navbar-container">
             <div class="navbar-brand"><a href="../index.html" style="color: inherit; text-decoration: none;">Ken Brown Financial Consultant</a></div>
-            <ul class="navbar-menu">
-                <li><a href="../index.html#about" class="navbar-link">About Ken</a></li>
-                <li><a href="../index.html#services" class="navbar-link">Services</a></li>
-                <li><a href="../index.html#expertise" class="navbar-link">Expertise</a></li>
-                <li><a href="../index.html#contact" class="navbar-link">Contact</a></li>
-                <li><a href="wills-estate-planning-expats.html" class="navbar-link">Wills & Estate</a></li>
-                <li><a href="https://m.me/kenbrownfc" class="navbar-cta">CONTACT KEN</a></li>
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="navbar-menu" id="navbar-menu" role="menubar">
+                <li role="none"><a class="navbar-link" href="../index.html#about" role="menuitem">About Ken</a></li>
+                <li class="nav-has-mega" role="none">
+                    <a class="navbar-link" href="../index.html#services" role="menuitem" aria-haspopup="true" aria-expanded="false" id="services-menu-trigger">Services &#9662;</a>
+                    <div class="mega-menu" role="menu" aria-labelledby="services-menu-trigger">
+                        <div class="mega-menu-inner">
+                            <div class="mega-col">
+                                <div class="mega-heading">Personal Finance</div>
+                                <a class="mega-link" href="retirement-planning-expats.html" role="menuitem">Retirement Planning</a>
+                                <a class="mega-link" href="investment-strategy-expats.html" role="menuitem">Investment Strategy</a>
+                                <a class="mega-link" href="tax-planning-expats.html" role="menuitem">Tax Planning</a>
+                                <a class="mega-link" href="expat-resources-thailand.html" role="menuitem">Expat Resources</a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-heading">Property &amp; Corporate</div>
+                                <a class="mega-link" href="property-real-estate.html" role="menuitem">Property &amp; Real Estate</a>
+                                <a class="mega-link" href="corporate-services.html" role="menuitem">Corporate Services</a>
+                                <div class="mega-heading mt">Learning Resources</div>
+                                <a class="mega-link" href="financial-101.html" role="menuitem">Financial 101</a>
+                                <a class="mega-link" href="getting-started-guide.html" role="menuitem">Getting Started</a>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-heading">Protection &amp; Estate</div>
+                                <a class="mega-link" href="wills-estate-planning-expats.html" role="menuitem">Wills &amp; Estate</a>
+                                <a class="mega-link" href="trust-services.html" role="menuitem">Trust Services</a>
+                                <a class="mega-link" href="claims-and-protection.html" role="menuitem">Asset Protection</a>
+                                <a class="mega-link" href="insurance-coverage-guide.html" role="menuitem">Insurance Coverage</a>
+                                <a class="mega-link" href="risk-management-guide.html" role="menuitem">Risk Management</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li role="none"><a class="navbar-link" href="../index.html#expertise" role="menuitem">Expertise</a></li>
+                <li role="none"><a class="navbar-link" href="../index.html#contact" role="menuitem">Contact</a></li>
+                <li role="none"><a class="navbar-link" href="wills-estate-planning-expats.html" role="menuitem">Wills &amp; Estate</a></li>
+                <li role="none"><a class="navbar-cta" href="https://m.me/kenbrownfc" role="menuitem">CONTACT KEN</a></li>
             </ul>
         </div>
     </nav>
+    <!-- Mobile overlay -->
+    <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+    <!-- Mobile slide-out drawer -->
+    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true" tabindex="-1">
+        <div class="mobile-drawer-header">
+            <span class="mobile-drawer-brand">Ken Brown FC</span>
+            <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close navigation menu">&#10005;</button>
+        </div>
+        <nav class="mobile-drawer-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="../index.html#about">About Ken</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../index.html#expertise">Expertise</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="wills-estate-planning-expats.html">Wills &amp; Estate</a></li>
+                <li><a href="https://m.me/kenbrownfc" class="mobile-cta-link">Contact Ken &#8594;</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-drawer-categories" aria-label="Service categories">
+            <div class="mobile-cat-title">Categories</div>
+            <div class="mobile-cat-group">
+                <h4>Personal Finance</h4>
+                <a href="retirement-planning-expats.html">Retirement Planning</a>
+                <a href="investment-strategy-expats.html">Investment Strategy</a>
+                <a href="tax-planning-expats.html">Tax Planning</a>
+                <a href="expat-resources-thailand.html">Expat Resources</a>
+            </div>
+            <div class="mobile-cat-group">
+                <h4>Property &amp; Corporate</h4>
+                <a href="property-real-estate.html">Property &amp; Real Estate</a>
+                <a href="corporate-services.html">Corporate Services</a>
+            </div>
+            <div class="mobile-cat-group">
+                <h4>Protection &amp; Estate</h4>
+                <a href="wills-estate-planning-expats.html">Wills &amp; Estate</a>
+                <a href="trust-services.html">Trust Services</a>
+                <a href="claims-and-protection.html">Asset Protection</a>
+                <a href="insurance-coverage-guide.html">Insurance Coverage</a>
+                <a href="risk-management-guide.html">Risk Management</a>
+            </div>
+            <div class="mobile-cat-group">
+                <h4>Learning Resources</h4>
+                <a href="financial-101.html">Financial 101</a>
+                <a href="getting-started-guide.html">Getting Started</a>
+            </div>
+        </div>
+    </div>
 
     <section class="page-hero">
         <div class="container">
@@ -99,6 +182,7 @@
 
             <div class="topic-section">
                 <h2>Understanding Trusts for Expats</h2>
+                <img src="../images/kenbrownfc%20ken%20brown%20financial%20consultant%2018.webp" alt="Professional financial consultant advising American expat on trust services – knowledge, experience, and expert support for cross-border wealth protection in Thailand" style="float: right; width: 45%; max-width: 70%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); margin: 0 0 var(--spacing-lg) var(--spacing-xl);" loading="lazy"/>
                 <p>Trusts are powerful estate planning tools, but <span class="highlight">they become even more critical when you have assets spanning multiple countries</span>. Proper trust planning can help you avoid international probate nightmares, protect assets across jurisdictions, and ensure your wealth passes smoothly to your heirs.</p>
 
                 <p>A trust is a legal arrangement where you (the grantor/settlor) transfer assets to a trustee who manages them for the benefit of your chosen beneficiaries according to the terms you specify. For expats, trusts serve multiple functions beyond simple estate planning—they provide asset protection, tax optimization, privacy, and simplified administration across borders.</p>
@@ -165,6 +249,7 @@
 
             <div class="topic-section">
                 <h2>Trust Administration and Management</h2>
+                <img src="../images/kenbrownfc%20ken%20brown%20financial%20consultant%2012.webp" alt="Briefcase filled with stacked US dollar bills representing wealth preservation and trust fund asset management for American expats in Thailand" style="display: block; width: 50%; height: auto; margin: var(--spacing-xl) auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);" loading="lazy"/>
 
                 <h3>Funding Your Trust</h3>
                 <p>Creating a trust is only the first step. <span class="highlight">The trust only controls assets that are properly transferred into it</span>—a critical step many people miss.</p>
@@ -232,6 +317,7 @@
 
             <div class="topic-section">
                 <h2>Cross-Border Trust Considerations</h2>
+                <img src="../images/kenbrownfc%20ken%20brown%20financial%20consultant%2035.webp" alt="Financial advisors reviewing investment charts and reports for cross-border trust planning and international estate management for American expats" style="display: block; width: 50%; height: auto; margin: var(--spacing-xl) auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);" loading="lazy"/>
 
                 <h3>US Trust for US Assets, Thai Structures for Thai Assets</h3>
                 <p>Generally, the cleanest approach is:</p>
@@ -344,7 +430,7 @@
     </section>
 
     <footer class="footer">
-<div class="footer-content" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr; max-width: 1400px;">
+<div class="footer-content">
 <div class="footer-section">
 <h4>Ken Brown Financial Consultant</h4>
 <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: var(--spacing-md);">Expert wealth management for American expats. Based in Thailand with global reach.</p>
@@ -397,13 +483,90 @@
 </footer>
 
     <script>
-        const navbar = document.getElementById('navbar');
+        const navbar        = document.getElementById('navbar');
+        const navbarToggle  = document.getElementById('navbar-toggle');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const mobileDrawer  = document.getElementById('mobile-drawer');
+        const drawerClose   = document.getElementById('mobile-drawer-close');
+        const servicesTrigger = document.getElementById('services-menu-trigger');
+        const navHasMega    = document.querySelector('.nav-has-mega');
+
+        // --- Navbar scroll effect ---
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // --- Mobile drawer ---
+        function openDrawer() {
+            mobileDrawer.classList.add('open');
+            mobileOverlay.classList.add('open');
+            mobileDrawer.setAttribute('aria-hidden', 'false');
+            mobileOverlay.setAttribute('aria-hidden', 'false');
+            navbarToggle.setAttribute('aria-expanded', 'true');
+            navbarToggle.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            mobileDrawer.focus();
+        }
+
+        function closeDrawer() {
+            mobileDrawer.classList.remove('open');
+            mobileOverlay.classList.remove('open');
+            mobileDrawer.setAttribute('aria-hidden', 'true');
+            mobileOverlay.setAttribute('aria-hidden', 'true');
+            navbarToggle.setAttribute('aria-expanded', 'false');
+            navbarToggle.classList.remove('active');
+            document.body.style.overflow = '';
+            navbarToggle.focus();
+        }
+
+        if (navbarToggle) {
+            navbarToggle.addEventListener('click', () => {
+                mobileDrawer.classList.contains('open') ? closeDrawer() : openDrawer();
+            });
+        }
+        if (drawerClose)   drawerClose.addEventListener('click', closeDrawer);
+        if (mobileOverlay) mobileOverlay.addEventListener('click', closeDrawer);
+
+        // Close drawer on any link tap inside
+        if (mobileDrawer) {
+            mobileDrawer.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeDrawer);
+            });
+        }
+
+        // Escape key closes both drawer and mega menu
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                if (mobileDrawer && mobileDrawer.classList.contains('open')) closeDrawer();
+                if (servicesTrigger) servicesTrigger.setAttribute('aria-expanded', 'false');
             }
+        });
+
+        // --- Desktop mega menu: ARIA state sync ---
+        if (servicesTrigger && navHasMega) {
+            navHasMega.addEventListener('mouseenter', () => {
+                servicesTrigger.setAttribute('aria-expanded', 'true');
+            });
+            navHasMega.addEventListener('mouseleave', () => {
+                servicesTrigger.setAttribute('aria-expanded', 'false');
+            });
+            navHasMega.addEventListener('focusin', () => {
+                servicesTrigger.setAttribute('aria-expanded', 'true');
+            });
+            navHasMega.addEventListener('focusout', e => {
+                if (!navHasMega.contains(e.relatedTarget)) {
+                    servicesTrigger.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        // --- Smooth scroll for anchor links ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
         });
     </script>
 <script src="../scripts/chaty-widget.js"></script>

@@ -4,10 +4,55 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Ken Brown Financial Consultant – Wealth Management for Expats in Thailand</title>
-<meta content="Ken Brown Financial Consultant specializes in wealth management, retirement planning, and tax optimization for expats in Thailand. Expertise in US/Thailand tax treaties, investment planning, and asset protection." name="description"/>
+<title>American Expat Financial Advisor in Thailand | Ken Brown Financial Consultant</title>
+<meta content="American financial advisor based in Thailand helping US expats with retirement planning, US/Thailand tax treaty optimization, estate planning, and wealth management. Schedule a free consultation with Ken Brown." name="description"/>
+<link rel="canonical" href="https://www.kenbrownfc.com/"/>
 <link href="./css/modern-design-system.css" rel="stylesheet"/>
 <link href="./css/chaty-front.min.css" id="chaty-front-css-css" media="all" rel="stylesheet"/>
+<!-- Organization + Person Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FinancialService",
+      "@id": "https://www.kenbrownfc.com/#organization",
+      "name": "Ken Brown Financial Consultant",
+      "url": "https://www.kenbrownfc.com/",
+      "logo": "https://www.kenbrownfc.com/images/kenbrownfc%20ken%20brown%20financial%20consultant%204.webp",
+      "description": "Expert wealth management for American expats in Thailand. Specializing in US/Thailand tax treaty optimization, retirement planning, estate planning, and asset protection.",
+      "areaServed": ["Thailand", "Southeast Asia", "Worldwide"],
+      "sameAs": [
+        "https://www.linkedin.com/in/ken-brown-59438192/",
+        "https://www.facebook.com/kenbrownfc"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+66-91-057-1270",
+        "contactType": "customer service",
+        "availableLanguage": "English"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "TH"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.kenbrownfc.com/#ken-brown",
+      "name": "Ken Brown",
+      "jobTitle": "Financial Consultant",
+      "worksFor": {
+        "@id": "https://www.kenbrownfc.com/#organization"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/ken-brown-59438192/"
+      ],
+      "description": "Wealth management consultant with 20+ years of experience specializing in serving American expats and international business professionals in Thailand."
+    }
+  ]
+}
+</script>
 <style>
         /* Page-specific styles */
         .about-ken-section {
@@ -238,6 +283,22 @@
             box-shadow: var(--shadow-lg);
         }
 
+        /* Responsive 2-col grid used for Expertise and Why Choose Ken */
+        .responsive-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-2xl);
+            margin-top: var(--spacing-2xl);
+        }
+
+        /* Responsive 3-col grid used for Get in Touch */
+        .responsive-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-2xl);
+            margin-top: var(--spacing-2xl);
+        }
+
         @media (max-width: 768px) {
             .ken-profile {
                 grid-template-columns: 1fr;
@@ -250,6 +311,41 @@
             .social-links {
                 justify-content: flex-start;
             }
+
+            .responsive-grid-2,
+            .responsive-grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            /* Reduce box padding on mobile to cut vertical white space */
+            .service-card {
+                padding: var(--spacing-lg);
+            }
+
+            .service-categories-grid > a > div,
+            .responsive-grid-2 > div,
+            .responsive-grid-3 > div {
+                padding: var(--spacing-lg) !important;
+            }
+
+            /* Trim internal spacing inside Get in Touch boxes */
+            .responsive-grid-3 > div > div:first-child {
+                font-size: 1.75rem !important;
+                margin-bottom: var(--spacing-sm) !important;
+            }
+
+            .responsive-grid-3 > div > h3 {
+                margin-bottom: var(--spacing-sm) !important;
+            }
+
+            .responsive-grid-3 > div > .btn {
+                margin-top: var(--spacing-sm) !important;
+            }
+
+            .responsive-grid-3 > div > p {
+                margin-top: var(--spacing-sm) !important;
+                margin-bottom: 0 !important;
+            }
         }
     </style>
 </head>
@@ -258,25 +354,101 @@
 <nav class="navbar" id="navbar">
 <div class="navbar-container">
 <div class="navbar-brand"><a href="index.html" style="color: inherit; text-decoration: none;">Ken Brown Financial Consultant</a></div>
-<button class="navbar-toggle" id="navbar-toggle">
+<button class="navbar-toggle" id="navbar-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-drawer">
 <span></span>
 <span></span>
 <span></span>
 </button>
-<ul class="navbar-menu" id="navbar-menu">
-<li><a class="navbar-link" href="#about">About Ken</a></li>
-<li><a class="navbar-link" href="#services">Services</a></li>
-<li><a class="navbar-link" href="#expertise">Expertise</a></li>
-<li><a class="navbar-link" href="#contact">Contact</a></li>
-<li><a class="navbar-link" href="pages/wills-estate-planning-expats.html">Wills &amp; Estate</a></li>
-<li><a class="navbar-cta" href="https://m.me/kenbrownfc">CONTACT KEN</a></li>
+<ul class="navbar-menu" id="navbar-menu" role="menubar">
+<li role="none"><a class="navbar-link" href="#about" role="menuitem">About Ken</a></li>
+<li class="nav-has-mega" role="none">
+<a class="navbar-link" href="#services" role="menuitem" aria-haspopup="true" aria-expanded="false" id="services-menu-trigger">Services &#9662;</a>
+<div class="mega-menu" role="menu" aria-labelledby="services-menu-trigger">
+<div class="mega-menu-inner">
+<div class="mega-col">
+<div class="mega-heading">Personal Finance</div>
+<a class="mega-link" href="pages/retirement-planning-expats.html" role="menuitem">Retirement Planning</a>
+<a class="mega-link" href="pages/investment-strategy-expats.html" role="menuitem">Investment Strategy</a>
+<a class="mega-link" href="pages/tax-planning-expats.html" role="menuitem">Tax Planning</a>
+<a class="mega-link" href="pages/expat-resources-thailand.html" role="menuitem">Expat Resources</a>
+</div>
+<div class="mega-col">
+<div class="mega-heading">Property &amp; Corporate</div>
+<a class="mega-link" href="pages/property-real-estate.html" role="menuitem">Property &amp; Real Estate</a>
+<a class="mega-link" href="pages/corporate-services.html" role="menuitem">Corporate Services</a>
+<div class="mega-heading mt">Learning Resources</div>
+<a class="mega-link" href="pages/financial-101.html" role="menuitem">Financial 101</a>
+<a class="mega-link" href="pages/getting-started-guide.html" role="menuitem">Getting Started</a>
+</div>
+<div class="mega-col">
+<div class="mega-heading">Protection &amp; Estate</div>
+<a class="mega-link" href="pages/wills-estate-planning-expats.html" role="menuitem">Wills &amp; Estate</a>
+<a class="mega-link" href="pages/trust-services.html" role="menuitem">Trust Services</a>
+<a class="mega-link" href="pages/claims-and-protection.html" role="menuitem">Asset Protection</a>
+<a class="mega-link" href="pages/insurance-coverage-guide.html" role="menuitem">Insurance Coverage</a>
+<a class="mega-link" href="pages/risk-management-guide.html" role="menuitem">Risk Management</a>
+</div>
+</div>
+</div>
+</li>
+<li role="none"><a class="navbar-link" href="#expertise" role="menuitem">Expertise</a></li>
+<li role="none"><a class="navbar-link" href="#contact" role="menuitem">Contact</a></li>
+<li role="none"><a class="navbar-link" href="pages/wills-estate-planning-expats.html" role="menuitem">Wills &amp; Estate</a></li>
+<li role="none"><a class="navbar-cta" href="https://m.me/kenbrownfc" role="menuitem">CONTACT KEN</a></li>
 </ul>
 </div>
 </nav>
+<!-- Mobile overlay -->
+<div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+<!-- Mobile slide-out drawer -->
+<div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true" tabindex="-1">
+<div class="mobile-drawer-header">
+<span class="mobile-drawer-brand">Ken Brown FC</span>
+<button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close navigation menu">&#10005;</button>
+</div>
+<nav class="mobile-drawer-nav" aria-label="Main navigation">
+<ul>
+<li><a href="#about">About Ken</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#expertise">Expertise</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="pages/wills-estate-planning-expats.html">Wills &amp; Estate</a></li>
+<li><a href="https://m.me/kenbrownfc" class="mobile-cta-link">Contact Ken &#8594;</a></li>
+</ul>
+</nav>
+<div class="mobile-drawer-categories" aria-label="Service categories">
+<div class="mobile-cat-title">Categories</div>
+<div class="mobile-cat-group">
+<h4>Personal Finance</h4>
+<a href="pages/retirement-planning-expats.html">Retirement Planning</a>
+<a href="pages/investment-strategy-expats.html">Investment Strategy</a>
+<a href="pages/tax-planning-expats.html">Tax Planning</a>
+<a href="pages/expat-resources-thailand.html">Expat Resources</a>
+</div>
+<div class="mobile-cat-group">
+<h4>Property &amp; Corporate</h4>
+<a href="pages/property-real-estate.html">Property &amp; Real Estate</a>
+<a href="pages/corporate-services.html">Corporate Services</a>
+</div>
+<div class="mobile-cat-group">
+<h4>Protection &amp; Estate</h4>
+<a href="pages/wills-estate-planning-expats.html">Wills &amp; Estate</a>
+<a href="pages/trust-services.html">Trust Services</a>
+<a href="pages/claims-and-protection.html">Asset Protection</a>
+<a href="pages/insurance-coverage-guide.html">Insurance Coverage</a>
+<a href="pages/risk-management-guide.html">Risk Management</a>
+</div>
+<div class="mobile-cat-group">
+<h4>Learning Resources</h4>
+<a href="pages/financial-101.html">Financial 101</a>
+<a href="pages/getting-started-guide.html">Getting Started</a>
+</div>
+</div>
+</div>
 <!-- Hero Section -->
 <section class="hero">
 <div class="hero-content">
-<h1 class="hero-title">Expert Wealth Management for Expats</h1>
+<h1 class="hero-title">Expert Wealth Management for American Expats in Thailand</h1>
 <p class="hero-subtitle">Strategic financial planning, retirement optimization, and tax-efficient wealth management for American expats in Thailand and beyond. Leveraging US/Thailand tax treaty benefits for maximum wealth preservation.</p>
 <div class="hero-buttons">
 <a class="btn btn-primary" href="https://m.me/kenbrownfc">SCHEDULE CONSULTATION</a>
@@ -290,7 +462,7 @@
 <h2 style="text-align: center; margin-bottom: var(--spacing-lg); color: var(--primary-navy);">Meet Ken Brown</h2>
 <div class="ken-profile">
 <div class="ken-image">
-<img alt="Ken Brown - Financial Consultant" src="./images/ken-brown-fc-kenbrownfc-2.png"/>
+<img alt="Ken Brown, American expat financial consultant based in Thailand" src="./images/kenbrownfc%20ken%20brown%20financial%20consultant%204.webp" width="600" height="600"/>
 </div>
 <div class="ken-bio">
 <h3>About Ken</h3>
@@ -301,7 +473,7 @@
                         Based in Thailand and leveraging his deep understanding of international tax implications, Ken helps clients navigate complex financial situations and optimize their wealth strategies using the benefits of the US/Thailand tax treaty.
                     </p>
 <p>
-                        Ken's expertise encompasses retirement planning, investment strategy, trust services, pension planning, and comprehensive estate planning designed specifically for the unique needs of expats. Schedule a consultation today to discuss your financial planning needs and discover how Ken can help you achieve your wealth management goals.
+                        Ken's expertise encompasses <a href="pages/retirement-planning-expats.html" style="color: var(--accent-gold);">retirement planning for American expats</a>, investment strategy, <a href="pages/trust-services.html" style="color: var(--accent-gold);">trust services</a>, pension planning, and <a href="pages/wills-estate-planning-expats.html" style="color: var(--accent-gold);">comprehensive estate planning</a> designed specifically for the unique needs of expats. Schedule a consultation today to discuss your financial planning needs and discover how Ken can help you achieve your wealth management goals.
                     </p>
 <div style="margin-top: var(--spacing-lg);">
 <h4 style="color: var(--primary-navy); margin-bottom: var(--spacing-sm);">Connect with Ken</h4>
@@ -325,10 +497,10 @@
 </div>
 <div style="text-align: center; font-size: var(--text-lg); line-height: 1.8; margin-bottom: var(--spacing-3xl); color: var(--text-dark);">
 <p><strong>US/Thailand Tax Treaty Benefits:</strong></p>
-<p>Ken specializes in helping American expats in Thailand leverage the US/Thailand tax treaty to minimize double taxation, optimize income reporting, and maximize tax-efficient wealth accumulation.</p>
+<p>Ken specializes in helping American expats in Thailand leverage the <a href="pages/tax-planning-expats.html" style="color: var(--accent-gold);">US/Thailand tax treaty</a> to minimize double taxation, optimize income reporting, and maximize tax-efficient wealth accumulation.</p>
 </div>
 <!-- Three Service Categories -->
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-2xl); margin-bottom: var(--spacing-3xl); align-items: stretch;">
+<div class="service-categories-grid">
 <!-- Personal Financial Services -->
 <a href="pages/getting-started-guide.html" style="text-decoration: none; color: inherit;">
 <div style="background: var(--neutral-white); padding: var(--spacing-2xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border-top: 4px solid var(--accent-gold); transition: all var(--transition-base); cursor: pointer; display: flex; flex-direction: column; min-height: 280px;">
@@ -437,7 +609,7 @@
 <h2>Areas of Expertise</h2>
 <p>Specialized knowledge across key financial areas</p>
 </div>
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-2xl); margin-top: var(--spacing-2xl);">
+<div class="responsive-grid-2">
 <div class="expertise-box">
 <h3>For American Expats</h3>
 <ul class="feature-list">
@@ -461,6 +633,7 @@
 </ul>
 </div>
 </div>
+<img src="./images/kenbrownfc%20ken%20brown%20financial%20consultant%2025.webp" alt="Bangkok city skyline at sunset featuring Mahanakhon tower – Ken Brown Financial Consultant based in Thailand serving American expats across Southeast Asia" style="display: block; width: 70%; height: auto; margin: var(--spacing-xl) auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);" loading="lazy"/>
 <div class="cta-box" style="margin-top: var(--spacing-3xl);">
 <div class="cta-content">
 <h2 style="color: var(--neutral-white); margin-bottom: var(--spacing-lg);">Ready to Optimize Your Financial Future?</h2>
@@ -476,6 +649,7 @@
 <section class="section" style="background: linear-gradient(135deg, rgba(10, 25, 47, 0.02), rgba(212, 165, 116, 0.05));">
 <div class="container">
 <!-- Section Heading -->
+<img src="./images/kenbrownfc%20ken%20brown%20financial%20consultant%2017.webp" alt="Financial advisor and American expat client reviewing investment charts and wealth management strategy in Thailand – Ken Brown Financial Consultant comprehensive services" style="display: block; width: 50%; height: auto; margin: 0 auto var(--spacing-3xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-md);" loading="lazy"/>
 <div class="section-title" style="margin-bottom: var(--spacing-3xl);">
 <h2>KEN KNOWS THE IMPORTANCE OF PUTTING YOUR AFFAIRS IN ORDER</h2>
 <p>Comprehensive Wills &amp; Estate Planning for International Expats</p>
@@ -539,7 +713,7 @@
 <!-- Why Choose Us Section -->
 <div style="margin-top: var(--spacing-3xl); padding: var(--spacing-3xl); background: var(--neutral-light-gray); border-radius: var(--radius-lg); border-left: 4px solid var(--accent-gold);">
 <h3 style="color: var(--primary-navy); text-align: center; margin-bottom: var(--spacing-2xl); font-size: var(--text-2xl);">Why Choose Ken for Your Estate Planning?</h3>
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-2xl);">
+<div class="responsive-grid-2" style="margin-top: 0;">
 <div style="display: flex; gap: var(--spacing-md);">
 <div style="color: var(--accent-gold); font-size: 1.5rem; flex-shrink: 0;">✓</div>
 <div>
@@ -583,6 +757,7 @@
 </div>
 </div>
 </div>
+<img src="./images/kenbrownfc%20ken%20brown%20financial%20consultant%2040.webp" alt="American expat couple relaxing by a tropical pool in Thailand representing the retirement lifestyle and financial security goals achieved through Ken Brown's estate and wealth planning" style="display: block; width: 70%; height: auto; margin: var(--spacing-2xl) auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);" loading="lazy"/>
 <div style="text-align: center; margin-top: var(--spacing-2xl);">
 <a class="btn btn-primary" href="https://m.me/kenbrownfc">START YOUR ESTATE PLANNING TODAY</a>
 </div>
@@ -596,7 +771,7 @@
 <h2>Get in Touch</h2>
 <p>Multiple ways to connect with Ken</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-2xl); margin-top: var(--spacing-2xl);">
+<div class="responsive-grid-3">
 <div style="background: var(--neutral-white); padding: var(--spacing-2xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); text-align: center;">
 <div style="font-size: 2.5rem; margin-bottom: var(--spacing-lg);">💬</div>
 <h3 style="color: var(--primary-navy); margin-bottom: var(--spacing-md);">Facebook Messenger</h3>
@@ -667,7 +842,7 @@
 </section>
 <!-- Footer -->
 <footer class="footer">
-<div class="footer-content" style="grid-template-columns: 2fr 1fr 1fr 1fr 1fr; max-width: 1400px;">
+<div class="footer-content">
 <div class="footer-section">
 <h4>Ken Brown Financial Consultant</h4>
 <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: var(--spacing-md);">Expert wealth management for American expats. Based in Thailand with global reach.</p>
@@ -718,49 +893,94 @@
 <p>© 2026 Ken Brown Financial Consultant. All rights reserved.</p>
 </div>
 </footer>
-<!-- Navigation Scroll Effect Script -->
+<!-- Navigation Script -->
 <script>
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+    const navbar        = document.getElementById('navbar');
+    const navbarToggle  = document.getElementById('navbar-toggle');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+    const mobileDrawer  = document.getElementById('mobile-drawer');
+    const drawerClose   = document.getElementById('mobile-drawer-close');
+    const servicesTrigger = document.getElementById('services-menu-trigger');
+    const navHasMega    = document.querySelector('.nav-has-mega');
+
+    // --- Navbar scroll effect ---
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // --- Mobile drawer ---
+    function openDrawer() {
+        mobileDrawer.classList.add('open');
+        mobileOverlay.classList.add('open');
+        mobileDrawer.setAttribute('aria-hidden', 'false');
+        mobileOverlay.setAttribute('aria-hidden', 'false');
+        navbarToggle.setAttribute('aria-expanded', 'true');
+        navbarToggle.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        mobileDrawer.focus();
+    }
+
+    function closeDrawer() {
+        mobileDrawer.classList.remove('open');
+        mobileOverlay.classList.remove('open');
+        mobileDrawer.setAttribute('aria-hidden', 'true');
+        mobileOverlay.setAttribute('aria-hidden', 'true');
+        navbarToggle.setAttribute('aria-expanded', 'false');
+        navbarToggle.classList.remove('active');
+        document.body.style.overflow = '';
+        navbarToggle.focus();
+    }
+
+    if (navbarToggle) {
+        navbarToggle.addEventListener('click', () => {
+            mobileDrawer.classList.contains('open') ? closeDrawer() : openDrawer();
+        });
+    }
+    if (drawerClose)   drawerClose.addEventListener('click', closeDrawer);
+    if (mobileOverlay) mobileOverlay.addEventListener('click', closeDrawer);
+
+    // Close drawer on any link tap inside
+    if (mobileDrawer) {
+        mobileDrawer.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeDrawer);
+        });
+    }
+
+    // Escape key closes both drawer and mega menu
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            if (mobileDrawer && mobileDrawer.classList.contains('open')) closeDrawer();
+            if (servicesTrigger) servicesTrigger.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // --- Desktop mega menu: ARIA state sync ---
+    if (servicesTrigger && navHasMega) {
+        navHasMega.addEventListener('mouseenter', () => {
+            servicesTrigger.setAttribute('aria-expanded', 'true');
+        });
+        navHasMega.addEventListener('mouseleave', () => {
+            servicesTrigger.setAttribute('aria-expanded', 'false');
+        });
+        navHasMega.addEventListener('focusin', () => {
+            servicesTrigger.setAttribute('aria-expanded', 'true');
+        });
+        navHasMega.addEventListener('focusout', e => {
+            if (!navHasMega.contains(e.relatedTarget)) {
+                servicesTrigger.setAttribute('aria-expanded', 'false');
             }
         });
+    }
 
-        // Hamburger menu toggle
-        const navbarToggle = document.getElementById('navbar-toggle');
-        const navbarMenu = document.getElementById('navbar-menu');
-
-        if (navbarToggle) {
-            navbarToggle.addEventListener('click', () => {
-                navbarToggle.classList.toggle('active');
-                navbarMenu.classList.toggle('mobile-open');
-            });
-        }
-
-        // Close menu when a link is clicked
-        document.querySelectorAll('.navbar-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navbarToggle) {
-                    navbarToggle.classList.remove('active');
-                    navbarMenu.classList.remove('mobile-open');
-                }
-            });
+    // --- Smooth scroll for anchor links ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
         });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
+    });
+</script>
 <!-- Chaty Floating Contact Widget -->
 <script src="./scripts/chaty-widget.js"></script>
 </body>
