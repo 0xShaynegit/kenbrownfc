@@ -178,6 +178,11 @@
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-md);
             transition: all var(--transition-base);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
         }
 
         .service-card:hover {
@@ -193,11 +198,13 @@
         .service-card p {
             color: var(--neutral-dark-gray);
             margin-bottom: var(--spacing-lg);
+            flex: 1;
         }
 
         .service-card .btn {
             display: inline-block;
             width: auto;
+            margin-top: auto;
         }
     </style>
 </head>
@@ -509,25 +516,23 @@
     </section>
 
     <!-- Related Content Section -->
-    <section class="section section-light">
-        <div class="container">
-            <h2 style="text-align: center; color: var(--primary-navy); margin-bottom: var(--spacing-2xl);">Related Resources</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Insurance Coverage Guide</h3>
-                    <p>Understand essential personal insurance coverage types including life, health, property, and liability insurance to protect your wealth and family.</p>
-                    <a href="insurance-coverage-guide.html" class="btn btn-secondary">READ MORE</a>
-                </div>
-                <div class="service-card">
-                    <h3>Claims & Protection</h3>
-                    <p>Navigate the insurance claims process effectively, understand documentation requirements, and ensure you receive the coverage you've paid for.</p>
-                    <a href="claims-and-protection.html" class="btn btn-secondary">READ MORE</a>
-                </div>
-                <div class="service-card">
-                    <h3>Wills & Estate Planning</h3>
-                    <p>Protect your legacy through comprehensive estate planning, including wills, trusts, and strategies for American expats living abroad.</p>
-                    <a href="wills-estate-planning-expats.html" class="btn btn-secondary">READ MORE</a>
-                </div>
+    <section class="section section-light" style="margin-top: var(--spacing-3xl); padding: var(--spacing-3xl); background: var(--neutral-light-gray); border-radius: var(--radius-lg);">
+        <h2 style="text-align: center; color: var(--primary-navy); margin-bottom: var(--spacing-2xl);">Related Resources</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Insurance Coverage Guide</h3>
+                <p>Understand essential personal insurance coverage types including life, health, property, and liability insurance to protect your wealth and family.</p>
+                <a href="insurance-coverage-guide.html" class="btn btn-secondary">READ MORE</a>
+            </div>
+            <div class="service-card">
+                <h3>Claims & Protection</h3>
+                <p>Navigate the insurance claims process effectively, understand documentation requirements, and ensure you receive the coverage you've paid for.</p>
+                <a href="claims-and-protection.html" class="btn btn-secondary">READ MORE</a>
+            </div>
+            <div class="service-card">
+                <h3>Wills & Estate Planning</h3>
+                <p>Protect your legacy through comprehensive estate planning, including wills, trusts, and strategies for American expats living abroad.</p>
+                <a href="wills-estate-planning-expats.html" class="btn btn-secondary">READ MORE</a>
             </div>
         </div>
     </section>

@@ -186,6 +186,11 @@
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-md);
             transition: all var(--transition-base);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
         }
 
         .service-card:hover {
@@ -201,11 +206,13 @@
         .service-card p {
             color: var(--neutral-dark-gray);
             margin-bottom: var(--spacing-lg);
+            flex: 1;
         }
 
         .service-card .btn {
             display: inline-block;
             width: auto;
+            margin-top: auto;
         }
     </style>
 </head>
@@ -674,25 +681,23 @@
     </section>
 
     <!-- Related Content Section -->
-    <section class="section section-light">
-        <div class="container">
-            <h2 style="text-align: center; color: var(--primary-navy); margin-bottom: var(--spacing-2xl);">Related Resources</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Trust Services</h3>
-                    <p>Discover how trusts provide asset protection, privacy, and estate planning benefits for comprehensive wealth management and legacy preservation.</p>
-                    <a href="trust-services.html" class="btn btn-secondary">READ MORE</a>
-                </div>
-                <div class="service-card">
-                    <h3>Tax Planning for Expats</h3>
-                    <p>Navigate US/Thailand tax treaty benefits, FATCA compliance, and tax-efficient strategies for American expats living abroad.</p>
-                    <a href="tax-planning-expats.html" class="btn btn-secondary">READ MORE</a>
-                </div>
-                <div class="service-card">
-                    <h3>Retirement Planning for Expats</h3>
-                    <p>Comprehensive retirement planning including Social Security abroad, 401(k)/IRA management, and healthcare planning for expats.</p>
-                    <a href="retirement-planning-expats.html" class="btn btn-secondary">READ MORE</a>
-                </div>
+    <section class="section section-light" style="margin-top: var(--spacing-3xl); padding: var(--spacing-3xl); background: var(--neutral-light-gray); border-radius: var(--radius-lg);">
+        <h2 style="text-align: center; color: var(--primary-navy); margin-bottom: var(--spacing-2xl);">Related Resources</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Trust Services</h3>
+                <p>Discover how trusts provide asset protection, privacy, and estate planning benefits for comprehensive wealth management and legacy preservation.</p>
+                <a href="trust-services.html" class="btn btn-secondary">READ MORE</a>
+            </div>
+            <div class="service-card">
+                <h3>Tax Planning for Expats</h3>
+                <p>Navigate US/Thailand tax treaty benefits, FATCA compliance, and tax-efficient strategies for American expats living abroad.</p>
+                <a href="tax-planning-expats.html" class="btn btn-secondary">READ MORE</a>
+            </div>
+            <div class="service-card">
+                <h3>Retirement Planning for Expats</h3>
+                <p>Comprehensive retirement planning including Social Security abroad, 401(k)/IRA management, and healthcare planning for expats.</p>
+                <a href="retirement-planning-expats.html" class="btn btn-secondary">READ MORE</a>
             </div>
         </div>
     </section>

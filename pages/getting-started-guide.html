@@ -187,6 +187,11 @@
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-md);
             transition: all var(--transition-base);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
         }
 
         .service-card:hover {
@@ -202,11 +207,13 @@
         .service-card p {
             color: var(--neutral-dark-gray);
             margin-bottom: var(--spacing-lg);
+            flex: 1;
         }
 
         .service-card .btn {
             display: inline-block;
             width: auto;
+            margin-top: auto;
         }
     </style>
 </head>
@@ -596,25 +603,23 @@
     </section>
 
     <!-- Related Content Section -->
-    <section class="section section-light">
-        <div class="container">
-            <h2 style="text-align: center; color: var(--primary-navy); margin-bottom: var(--spacing-2xl);">Related Resources</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Financial 101</h3>
-                    <p>Master the fundamentals of personal financial management including budgeting, saving, investing, and debt management to build a strong financial foundation.</p>
-                    <a href="financial-101.html" class="btn btn-secondary">READ MORE</a>
-                </div>
-                <div class="service-card">
-                    <h3>Investment Strategy for Expats</h3>
-                    <p>Comprehensive investment strategies designed specifically for American expats, covering portfolio diversification, currency risk, and tax-efficient investing.</p>
-                    <a href="investment-strategy-expats.html" class="btn btn-secondary">READ MORE</a>
-                </div>
-                <div class="service-card">
-                    <h3>Retirement Planning for Expats</h3>
-                    <p>Navigate the complexities of retirement planning as an American expat, including Social Security, 401(k)/IRA management, and healthcare planning.</p>
-                    <a href="retirement-planning-expats.html" class="btn btn-secondary">READ MORE</a>
-                </div>
+    <section class="section section-light" style="margin-top: var(--spacing-3xl); padding: var(--spacing-3xl); background: var(--neutral-light-gray); border-radius: var(--radius-lg);">
+        <h2 style="text-align: center; color: var(--primary-navy); margin-bottom: var(--spacing-2xl);">Related Resources</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Financial 101</h3>
+                <p>Master the fundamentals of personal financial management including budgeting, saving, investing, and debt management to build a strong financial foundation.</p>
+                <a href="financial-101.html" class="btn btn-secondary">READ MORE</a>
+            </div>
+            <div class="service-card">
+                <h3>Investment Strategy for Expats</h3>
+                <p>Comprehensive investment strategies designed specifically for American expats, covering portfolio diversification, currency risk, and tax-efficient investing.</p>
+                <a href="investment-strategy-expats.html" class="btn btn-secondary">READ MORE</a>
+            </div>
+            <div class="service-card">
+                <h3>Retirement Planning for Expats</h3>
+                <p>Navigate the complexities of retirement planning as an American expat, including Social Security, 401(k)/IRA management, and healthcare planning.</p>
+                <a href="retirement-planning-expats.html" class="btn btn-secondary">READ MORE</a>
             </div>
         </div>
     </section>
