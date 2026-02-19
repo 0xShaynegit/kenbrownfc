@@ -147,12 +147,12 @@
       var isOpen = widget.classList.contains("chaty-open");
 
       if (isOpen) {
-        // Close the widget
+        // Close the widget - collapse items upward without creating gap
         widget.classList.remove("chaty-open");
         var items = channelList.querySelectorAll(".chaty-channel");
         items.forEach(function (item) {
           item.style.transition = "0.25s ease";
-          item.style.bottom = "0px";
+          item.style.bottom = "-100px";
           item.style.opacity = "0";
         });
       } else {
