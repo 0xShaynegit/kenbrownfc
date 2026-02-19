@@ -325,6 +325,17 @@
             color: var(--text-dark);
             font-weight: 500;
             min-width: 180px;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            cursor: pointer;
+        }
+
+        .insurance-field input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--accent-gold);
         }
 
         .insurance-field input[type="text"],
@@ -339,6 +350,28 @@
 
         .insurance-field input[type="text"]::placeholder {
             color: var(--neutral-dark-gray);
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .checkbox-wrapper input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--accent-gold);
+        }
+
+        .checkbox-wrapper label {
+            color: var(--text-dark);
+            font-weight: 500;
+            cursor: pointer;
+            margin: 0;
+            min-width: auto;
         }
 
         .na-text {
@@ -600,13 +633,9 @@
                     <!-- Life Insurance Card -->
                     <div class="insurance-card">
                         <h4>Life Insurance</h4>
-                        <div class="insurance-field">
-                            <label for="life-have">Life Insurance?</label>
-                            <select id="life-have">
-                                <option value="">Select...</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="life-have">
+                            <label for="life-have">Do you have this?</label>
                         </div>
                         <div class="insurance-field">
                             <label for="life-amount">Coverage Amount</label>
@@ -620,13 +649,9 @@
                     <!-- Health Insurance Card -->
                     <div class="insurance-card">
                         <h4>Health Insurance</h4>
-                        <div class="insurance-field">
-                            <label for="health-have">Health Insurance?</label>
-                            <select id="health-have">
-                                <option value="">Select...</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="health-have">
+                            <label for="health-have">Do you have this?</label>
                         </div>
                         <div class="insurance-field">
                             <label for="health-amount">Coverage Amount</label>
@@ -641,13 +666,9 @@
                     <!-- Disability Insurance Card -->
                     <div class="insurance-card">
                         <h4>Disability Insurance</h4>
-                        <div class="insurance-field">
-                            <label for="disability-have">Disability Insurance?</label>
-                            <select id="disability-have">
-                                <option value="">Select...</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="disability-have">
+                            <label for="disability-have">Do you have this?</label>
                         </div>
                         <div class="insurance-field">
                             <label for="disability-amount">Monthly Benefit Amount</label>
@@ -662,13 +683,9 @@
                     <!-- Home/Property Insurance Card -->
                     <div class="insurance-card">
                         <h4>Home/Property Insurance</h4>
-                        <div class="insurance-field">
-                            <label for="home-have">Property Insurance?</label>
-                            <select id="home-have">
-                                <option value="">Select...</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="home-have">
+                            <label for="home-have">Do you have this?</label>
                         </div>
                         <div class="insurance-field">
                             <label for="home-amount">Coverage Amount</label>
@@ -683,13 +700,9 @@
                     <!-- Auto Insurance Card -->
                     <div class="insurance-card">
                         <h4>Auto Insurance</h4>
-                        <div class="insurance-field">
-                            <label for="auto-have">Auto Insurance?</label>
-                            <select id="auto-have">
-                                <option value="">Select...</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="auto-have">
+                            <label for="auto-have">Do you have this?</label>
                         </div>
                         <div class="insurance-field">
                             <label for="auto-amount">Liability Coverage Limit</label>
@@ -698,6 +711,44 @@
                         <div class="insurance-field">
                             <label for="auto-deductible">Deductible Amount</label>
                             <input type="text" id="auto-deductible" placeholder="$________">
+                        </div>
+                    </div>
+
+                    <!-- Umbrella Liability Insurance Card -->
+                    <div class="insurance-card">
+                        <h4>Umbrella Liability Insurance</h4>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="umbrella-have">
+                            <label for="umbrella-have">Do you have this?</label>
+                        </div>
+                        <div class="insurance-field">
+                            <label for="umbrella-amount">Coverage Amount</label>
+                            <input type="text" id="umbrella-amount" placeholder="$________">
+                        </div>
+                        <div class="insurance-field">
+                            <label for="umbrella-deductible">Deductible Amount</label>
+                            <input type="text" id="umbrella-deductible" placeholder="$________">
+                        </div>
+                    </div>
+
+                    <!-- Other Insurance Card -->
+                    <div class="insurance-card">
+                        <h4>Other Insurance</h4>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="other-have">
+                            <label for="other-have">Do you have other insurance?</label>
+                        </div>
+                        <div class="insurance-field">
+                            <label for="other-type">Type</label>
+                            <input type="text" id="other-type" placeholder="____________________">
+                        </div>
+                        <div class="insurance-field">
+                            <label for="other-amount">Coverage Amount</label>
+                            <input type="text" id="other-amount" placeholder="$________">
+                        </div>
+                        <div class="insurance-field">
+                            <label for="other-deductible">Deductible Amount</label>
+                            <input type="text" id="other-deductible" placeholder="$________">
                         </div>
                     </div>
                 </div>
