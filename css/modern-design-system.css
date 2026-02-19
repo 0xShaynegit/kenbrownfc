@@ -810,6 +810,31 @@ a:hover {
     .btn {
         width: 100%;
     }
+
+    /* Mobile frame/box spacing: 15px margin from edges, 20px internal padding */
+    .container {
+        padding: 0 15px !important;
+    }
+
+    .section {
+        padding: var(--spacing-2xl) 15px !important;
+    }
+
+    /* Service cards, expertise boxes, and content containers */
+    .service-card,
+    .expertise-box,
+    .cta-box,
+    [style*="padding: var(--spacing-2xl)"],
+    [style*="padding: var(--spacing-lg)"] {
+        padding: 20px !important;
+    }
+
+    /* Content sections inside boxes */
+    .topic-section,
+    .highlight-feature,
+    .content-section {
+        padding: 20px !important;
+    }
 }
 
 /* ===== SERVICE CATEGORIES GRID (Section A) ===== */

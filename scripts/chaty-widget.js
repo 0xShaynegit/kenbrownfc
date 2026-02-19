@@ -137,6 +137,9 @@
     chaty.appendChild(widget);
     document.body.appendChild(chaty);
 
+    // Auto-close timer
+    var autoCloseTimer = null;
+
     // Toggle open/close
     function toggle() {
       widget.classList.toggle("chaty-open");
@@ -149,6 +152,11 @@
           item.style.opacity = "1";
           item.style.zIndex = "10003";
         });
+        // Start auto-close timer (30 seconds)
+        clearTimeout(autoCloseTimer);
+        autoCloseTimer = setTimeout(function() {
+          toggle();
+        }, 30000);
       } else {
         var items = channelList.querySelectorAll(".chaty-channel");
         items.forEach(function (item) {
@@ -156,11 +164,20 @@
           item.style.bottom = "0px";
           item.style.opacity = "0";
         });
+        // Clear timer when closing
+        clearTimeout(autoCloseTimer);
       }
     }
 
+    // Trigger button: Toggle open/close
     ctaMainBtn.addEventListener("click", toggle);
-    ctaCloseBtn.addEventListener("click", toggle);
+
+    // Close button: Always close
+    ctaCloseBtn.addEventListener("click", function() {
+      if (widget.classList.contains("chaty-open")) {
+        toggle();
+      }
+    });
   }
 
   // Initialize when DOM ready
