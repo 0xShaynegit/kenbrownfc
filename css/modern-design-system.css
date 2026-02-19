@@ -836,7 +836,29 @@ a:hover {
     }
 
     /* Page hero and content areas */
-    padding-top: 70px
+    .page-hero {
+        padding-top: 70px !important;
+    }
+
+    /* Prevent tables from horizontal overflow */
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table tr {
+        display: block;
+        width: 100%;
+    }
+
+    table th, table td {
+        display: block;
+        padding: 8px;
+        text-align: left;
+        word-break: break-word;
+    }
 
     /* Prevent navbar brand from wrapping on mobile */
     .navbar-brand {
