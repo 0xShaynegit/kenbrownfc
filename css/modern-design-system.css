@@ -836,10 +836,7 @@ a:hover {
     }
 
     /* Page hero and content areas */
-    .page-hero {
-        padding: var(--spacing-2xl) 15px !important;
-        margin-top: 50px;
-    }
+    padding-top: 70px
 
     /* Prevent navbar brand from wrapping on mobile */
     .navbar-brand {
