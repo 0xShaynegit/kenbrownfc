@@ -137,13 +137,22 @@
     chaty.appendChild(widget);
     document.body.appendChild(chaty);
 
-    // Auto-close timer
-    var autoCloseTimer = null;
-
     // Toggle open/close
     function toggle() {
-      widget.classList.toggle("chaty-open");
-      if (widget.classList.contains("chaty-open")) {
+      var isOpen = widget.classList.contains("chaty-open");
+
+      if (isOpen) {
+        // Close the widget
+        widget.classList.remove("chaty-open");
+        var items = channelList.querySelectorAll(".chaty-channel");
+        items.forEach(function (item) {
+          item.style.transition = "0.25s ease";
+          item.style.bottom = "0px";
+          item.style.opacity = "0";
+        });
+      } else {
+        // Open the widget
+        widget.classList.add("chaty-open");
         var items = channelList.querySelectorAll(".chaty-channel");
         items.forEach(function (item, idx) {
           var offset = (items.length - idx) * itemHeight + 4;
@@ -152,32 +161,26 @@
           item.style.opacity = "1";
           item.style.zIndex = "10003";
         });
-        // Start auto-close timer (30 seconds)
-        clearTimeout(autoCloseTimer);
-        autoCloseTimer = setTimeout(function() {
-          toggle();
+
+        // Auto-close after 30 seconds
+        setTimeout(function() {
+          if (widget.classList.contains("chaty-open")) {
+            toggle();
+          }
         }, 30000);
-      } else {
-        var items = channelList.querySelectorAll(".chaty-channel");
-        items.forEach(function (item) {
-          item.style.transition = "0.25s ease";
-          item.style.bottom = "0px";
-          item.style.opacity = "0";
-        });
-        // Clear timer when closing
-        clearTimeout(autoCloseTimer);
       }
     }
 
-    // Both buttons toggle the widget
-    function handleButtonClick(e) {
-      e.preventDefault();
-      e.stopPropagation();
+    // Button click handlers - simple toggle
+    ctaMainBtn.onclick = function() {
       toggle();
-    }
+      return false;
+    };
 
-    ctaMainBtn.addEventListener("click", handleButtonClick);
-    ctaCloseBtn.addEventListener("click", handleButtonClick);
+    ctaCloseBtn.onclick = function() {
+      toggle();
+      return false;
+    };
   }
 
   // Initialize when DOM ready
