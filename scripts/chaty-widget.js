@@ -169,9 +169,19 @@
       }
     }
 
-    // Both trigger and close buttons toggle open/close
-    ctaMainBtn.addEventListener("click", toggle);
-    ctaCloseBtn.addEventListener("click", toggle);
+    // Trigger button toggles open/close
+    ctaMainBtn.addEventListener("click", function(e) {
+      e.stopPropagation();
+      toggle();
+    });
+
+    // Close button closes the widget
+    ctaCloseBtn.addEventListener("click", function(e) {
+      e.stopPropagation();
+      if (widget.classList.contains("chaty-open")) {
+        toggle();
+      }
+    });
   }
 
   // Initialize when DOM ready

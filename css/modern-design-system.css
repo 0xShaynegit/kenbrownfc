@@ -821,25 +821,21 @@ a:hover {
         padding: var(--spacing-2xl) 15px !important;
     }
 
-    /* Service cards, expertise boxes, and all content containers */
+    /* Service cards, expertise boxes, and content containers (NO CHATY OR WIDGET STYLES) */
     .service-card,
     .expertise-box,
     .cta-box,
     .topic-section,
     .highlight-feature,
     .content-section,
-    .cta-inline,
-    [style*="padding: var(--spacing-2xl)"],
-    [style*="padding: var(--spacing-lg)"],
-    [style*="padding: var(--spacing-3xl)"],
-    [style*="background:"],
-    [style*="border-radius"] {
+    .cta-inline {
         padding: 20px !important;
     }
 
     /* Page hero and content areas */
     .page-hero {
         padding: var(--spacing-2xl) 15px !important;
+        margin-top: 50px;
     }
 
     /* Card grids */
@@ -850,6 +846,15 @@ a:hover {
         gap: var(--spacing-lg) !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
+    }
+
+    /* Fix navbar brand wrapping on mobile */
+    .navbar-brand {
+        font-size: var(--text-sm) !important;
+        max-width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 
