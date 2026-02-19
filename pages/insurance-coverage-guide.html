@@ -284,6 +284,84 @@
             display: inline-block;
             width: auto;
         }
+
+        .insurance-checklist {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-2xl);
+            margin: var(--spacing-3xl) 0;
+        }
+
+        .insurance-card {
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .insurance-card:nth-child(odd) {
+            background: var(--neutral-white);
+            border: 1px solid var(--neutral-gray);
+        }
+
+        .insurance-card:nth-child(even) {
+            background: var(--neutral-light-gray);
+        }
+
+        .insurance-card h4 {
+            color: var(--primary-navy);
+            font-size: var(--text-xl);
+            margin-bottom: var(--spacing-2xl);
+            font-weight: 700;
+        }
+
+        .insurance-field {
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+        }
+
+        .insurance-field label {
+            color: var(--text-dark);
+            font-weight: 500;
+            min-width: 180px;
+        }
+
+        .insurance-field input[type="text"],
+        .insurance-field select {
+            flex: 1;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 1px solid var(--neutral-gray);
+            border-radius: var(--radius-sm);
+            font-size: var(--text-base);
+            font-family: var(--font-sans);
+        }
+
+        .insurance-field input[type="text"]::placeholder {
+            color: var(--neutral-dark-gray);
+        }
+
+        .na-text {
+            color: var(--neutral-dark-gray);
+            font-style: italic;
+            padding: var(--spacing-sm) var(--spacing-md);
+        }
+
+        @media (max-width: 768px) {
+            .insurance-field {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .insurance-field label {
+                min-width: auto;
+            }
+
+            .insurance-field input[type="text"],
+            .insurance-field select {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -518,54 +596,111 @@
                 <h2>Insurance Coverage Checklist</h2>
                 <p>Use this checklist to assess your insurance coverage:</p>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Insurance Type</th>
-                            <th>Do You Have It?</th>
-                            <th>Coverage Amount</th>
-                            <th>Deductible</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Life Insurance</td>
-                            <td>Yes / No</td>
-                            <td>$________</td>
-                            <td>N/A</td>
-                        </tr>
-                        <tr>
-                            <td>Health Insurance</td>
-                            <td>Yes / No</td>
-                            <td>$________</td>
-                            <td>$________</td>
-                        </tr>
-                        <tr>
-                            <td>Disability Insurance</td>
-                            <td>Yes / No</td>
-                            <td>$________/month</td>
-                            <td>$________</td>
-                        </tr>
-                        <tr>
-                            <td>Home/Property Insurance</td>
-                            <td>Yes / No</td>
-                            <td>$________</td>
-                            <td>$________</td>
-                        </tr>
-                        <tr>
-                            <td>Auto Insurance</td>
-                            <td>Yes / No</td>
-                            <td>$________</td>
-                            <td>$________</td>
-                        </tr>
-                        <tr>
-                            <td>Umbrella Liability</td>
-                            <td>Yes / No</td>
-                            <td>$________</td>
-                            <td>$________</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="insurance-checklist">
+                    <!-- Life Insurance Card -->
+                    <div class="insurance-card">
+                        <h4>Life Insurance</h4>
+                        <div class="insurance-field">
+                            <label for="life-have">Life Insurance?</label>
+                            <select id="life-have">
+                                <option value="">Select...</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="insurance-field">
+                            <label for="life-amount">Coverage Amount</label>
+                            <input type="text" id="life-amount" placeholder="$________">
+                        </div>
+                        <div class="insurance-field">
+                            <span class="na-text">N/A</span>
+                        </div>
+                    </div>
+
+                    <!-- Health Insurance Card -->
+                    <div class="insurance-card">
+                        <h4>Health Insurance</h4>
+                        <div class="insurance-field">
+                            <label for="health-have">Health Insurance?</label>
+                            <select id="health-have">
+                                <option value="">Select...</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="insurance-field">
+                            <label for="health-amount">Coverage Amount</label>
+                            <input type="text" id="health-amount" placeholder="$________">
+                        </div>
+                        <div class="insurance-field">
+                            <label for="health-deductible">Deductible Amount</label>
+                            <input type="text" id="health-deductible" placeholder="$________">
+                        </div>
+                    </div>
+
+                    <!-- Disability Insurance Card -->
+                    <div class="insurance-card">
+                        <h4>Disability Insurance</h4>
+                        <div class="insurance-field">
+                            <label for="disability-have">Disability Insurance?</label>
+                            <select id="disability-have">
+                                <option value="">Select...</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="insurance-field">
+                            <label for="disability-amount">Monthly Benefit Amount</label>
+                            <input type="text" id="disability-amount" placeholder="$________/month">
+                        </div>
+                        <div class="insurance-field">
+                            <label for="disability-deductible">Elimination Period</label>
+                            <input type="text" id="disability-deductible" placeholder="$________">
+                        </div>
+                    </div>
+
+                    <!-- Home/Property Insurance Card -->
+                    <div class="insurance-card">
+                        <h4>Home/Property Insurance</h4>
+                        <div class="insurance-field">
+                            <label for="home-have">Property Insurance?</label>
+                            <select id="home-have">
+                                <option value="">Select...</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="insurance-field">
+                            <label for="home-amount">Coverage Amount</label>
+                            <input type="text" id="home-amount" placeholder="$________">
+                        </div>
+                        <div class="insurance-field">
+                            <label for="home-deductible">Deductible Amount</label>
+                            <input type="text" id="home-deductible" placeholder="$________">
+                        </div>
+                    </div>
+
+                    <!-- Auto Insurance Card -->
+                    <div class="insurance-card">
+                        <h4>Auto Insurance</h4>
+                        <div class="insurance-field">
+                            <label for="auto-have">Auto Insurance?</label>
+                            <select id="auto-have">
+                                <option value="">Select...</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="insurance-field">
+                            <label for="auto-amount">Liability Coverage Limit</label>
+                            <input type="text" id="auto-amount" placeholder="$________">
+                        </div>
+                        <div class="insurance-field">
+                            <label for="auto-deductible">Deductible Amount</label>
+                            <input type="text" id="auto-deductible" placeholder="$________">
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Section 4 -->
