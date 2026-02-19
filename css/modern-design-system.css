@@ -831,9 +831,7 @@ a:hover {
     .cta-inline,
     [style*="padding: var(--spacing-2xl)"],
     [style*="padding: var(--spacing-lg)"],
-    [style*="padding: var(--spacing-3xl)"],
-    [style*="background:"],
-    [style*="border-radius"] {
+    [style*="padding: var(--spacing-3xl)"] {
         padding: 20px !important;
     }
 
@@ -849,10 +847,7 @@ a:hover {
         max-width: calc(100% - 60px);
     }
 
-    /* Improve navbar visibility on mobile before scroll */
-    .navbar {
-        background: rgba(10, 25, 47, 0.85) !important;
-    }
+    /* Navbar on mobile matches desktop: transparent until scrolled */
 
     /* Card grids */
     .services-grid,

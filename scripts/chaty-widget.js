@@ -1,6 +1,7 @@
 /**
  * Static Chaty Widget – Ken Brown Financial Consultant
  * Floating social contact buttons (bottom-left)
+ * All elements use position:fixed so trigger button NEVER moves
  */
 (function () {
   "use strict";
@@ -36,12 +37,15 @@
     }
   ];
 
-  // Main trigger icon – black circle, white chat bubble, 54x54 (responsive)
   var isMobile = window.innerWidth <= 480;
-  var svgSize = isMobile ? "40" : "54";
+  var iconSize = isMobile ? 40 : 54;
+  var itemGap = isMobile ? 10 : 12;  // gap between icons
+  var bottomOffset = 20;             // distance from bottom of viewport
+  var leftOffset = 20;               // distance from left of viewport
 
+  // Main trigger icon – black circle, white chat bubble
   var triggerSvg =
-    '<svg width="' + svgSize + '" height="' + svgSize + '" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+    '<svg width="' + iconSize + '" height="' + iconSize + '" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">' +
     '<circle cx="19.5" cy="19.5" r="19.5" fill="#000000"/>' +
     '<path d="M26.4 13H13.6C12.72 13 12 13.72 12 14.6V23.4C12 24.28 12.72 25 13.6 25H16L19.5 28L23 25H26.4C27.28 25 28 24.28 28 23.4V14.6C28 13.72 27.28 13 26.4 13Z" fill="white"/>' +
     '<circle cx="15.5" cy="19" r="1.25" fill="#000000"/>' +
@@ -49,142 +53,148 @@
     '<circle cx="23.5" cy="19" r="1.25" fill="#000000"/>' +
     '</svg>';
 
-  // Close icon – black circle, white X, 54x54 (responsive)
+  // Close icon – black circle, white X
   var closeSvg =
-    '<svg width="' + svgSize + '" height="' + svgSize + '" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+    '<svg width="' + iconSize + '" height="' + iconSize + '" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">' +
     '<circle cx="19.5" cy="19.5" r="19.5" fill="#000000"/>' +
     '<path d="M25 14L14 25M14 14L25 25" stroke="white" stroke-width="2.5" stroke-linecap="round"/>' +
     '</svg>';
 
   function createWidget() {
-    // Container
-    var chaty = document.createElement("div");
-    chaty.className = "chaty active";
-    chaty.id = "chaty-widget";
+    var isOpen = false;
+    var autoCloseTimer = null;
+    var channelEls = [];
 
-    var widget = document.createElement("div");
-    widget.className = "chaty-widget left-position";
+    // --- Trigger button (FIXED, never moves) ---
+    var triggerEl = document.createElement("div");
+    triggerEl.id = "chaty-trigger";
+    triggerEl.style.cssText = [
+      "position:fixed",
+      "bottom:" + bottomOffset + "px",
+      "left:" + leftOffset + "px",
+      "width:" + iconSize + "px",
+      "height:" + iconSize + "px",
+      "border-radius:50%",
+      "cursor:pointer",
+      "z-index:10010",
+      "line-height:0",
+      "transition:transform 0.2s ease"
+    ].join(";");
+    triggerEl.innerHTML = triggerSvg;
 
-    // Channel list (responsive height) - positioned absolutely to prevent layout shift
-    var channelList = document.createElement("div");
-    channelList.className = "chaty-channel-list";
-    var itemHeight = isMobile ? 50 : 62;
-    channelList.style.position = "absolute";
-    channelList.style.bottom = "60px";
-    channelList.style.right = "0";
-    channelList.style.height = (channels.length * itemHeight + 10) + "px";
-    channelList.style.overflow = "visible";
-    channelList.style.zIndex = "10002";
+    // Hover scale
+    triggerEl.onmouseenter = function() { triggerEl.style.transform = "scale(1.1)"; };
+    triggerEl.onmouseleave = function() { triggerEl.style.transform = "scale(1)"; };
 
-    channels.forEach(function (ch) {
-      var channel = document.createElement("div");
-      channel.className =
-        "chaty-channel " + ch.name + "-channel chaty-tooltip pos-right";
-      channel.setAttribute("data-hover", ch.label);
+    document.body.appendChild(triggerEl);
+
+    // --- Channel icons (FIXED, stacked above trigger) ---
+    channels.forEach(function(ch, idx) {
+      var itemEl = document.createElement("div");
+
+      // Calculate each icon's resting bottom position (above trigger)
+      var stackBottom = bottomOffset + iconSize + itemGap + idx * (iconSize + itemGap);
+
+      itemEl.style.cssText = [
+        "position:fixed",
+        "bottom:" + bottomOffset + "px",   // start at trigger position (hidden)
+        "left:" + leftOffset + "px",
+        "width:" + iconSize + "px",
+        "height:" + iconSize + "px",
+        "border-radius:50%",
+        "z-index:10009",
+        "opacity:0",
+        "pointer-events:none",
+        "line-height:0",
+        "transition:bottom 0.3s ease, opacity 0.3s ease"
+      ].join(";");
 
       var link = document.createElement("a");
       link.href = ch.url;
       link.target = ch.name === "Phone" ? "_self" : "_blank";
       link.rel = "noopener noreferrer";
-      link.className = "chaty-svg";
       link.setAttribute("aria-label", ch.label);
+      link.style.display = "block";
+      link.style.width = iconSize + "px";
+      link.style.height = iconSize + "px";
+      link.style.borderRadius = "50%";
+      link.style.lineHeight = "0";
+      link.innerHTML = ch.svg;
 
-      var iconWrap = document.createElement("span");
-      iconWrap.className = "chaty-icon";
-      iconWrap.style.background = ch.color;
-      iconWrap.style.borderRadius = "50%";
-      iconWrap.style.display = "block";
-      iconWrap.style.width = "54px";
-      iconWrap.style.height = "54px";
-      iconWrap.style.flexShrink = "0";
-      iconWrap.innerHTML = ch.svg;
-
-      // Mobile responsive sizing
-      if (window.innerWidth <= 480) {
-        iconWrap.style.width = "40px";
-        iconWrap.style.height = "40px";
+      // Make SVG fill the link
+      var svgEl = link.querySelector("svg");
+      if (svgEl) {
+        svgEl.setAttribute("width", iconSize);
+        svgEl.setAttribute("height", iconSize);
       }
 
-      link.appendChild(iconWrap);
-      channel.appendChild(link);
-      channelList.appendChild(channel);
+      // Tooltip
+      link.title = ch.label;
+
+      itemEl.appendChild(link);
+      document.body.appendChild(itemEl);
+
+      channelEls.push({ el: itemEl, bottom: stackBottom });
     });
 
-    widget.appendChild(channelList);
+    // --- Toggle function ---
+    function openWidget() {
+      isOpen = true;
+      triggerEl.innerHTML = closeSvg;
 
-    // Trigger area - keep at bottom and prevent layout shift
-    var trigger = document.createElement("div");
-    trigger.className = "chaty-i-trigger";
-    trigger.style.position = "relative";
-    trigger.style.zIndex = "10001";
+      channelEls.forEach(function(item, idx) {
+        item.el.style.transitionDelay = (idx * 0.06) + "s";
+        item.el.style.bottom = item.bottom + "px";
+        item.el.style.opacity = "1";
+        item.el.style.pointerEvents = "auto";
+      });
 
-    // Main button – no animation class
-    var ctaMain = document.createElement("div");
-    ctaMain.className = "chaty-cta-main chaty-tooltip pos-right";
-    ctaMain.setAttribute("data-hover", "Contact us");
-    var ctaMainBtn = document.createElement("div");
-    ctaMainBtn.className = "chaty-cta-button";
-    ctaMainBtn.innerHTML = triggerSvg;
-    ctaMain.appendChild(ctaMainBtn);
+      // Auto-close after 30 seconds
+      if (autoCloseTimer) clearTimeout(autoCloseTimer);
+      autoCloseTimer = setTimeout(function() {
+        if (isOpen) closeWidget();
+      }, 30000);
+    }
 
-    // Close button
-    var ctaClose = document.createElement("div");
-    ctaClose.className = "chaty-cta-close chaty-tooltip pos-right";
-    ctaClose.setAttribute("data-hover", "Hide");
-    var ctaCloseBtn = document.createElement("div");
-    ctaCloseBtn.className = "chaty-cta-button";
-    ctaCloseBtn.innerHTML = closeSvg;
-    ctaClose.appendChild(ctaCloseBtn);
+    function closeWidget() {
+      isOpen = false;
+      triggerEl.innerHTML = triggerSvg;
 
-    trigger.appendChild(ctaMain);
-    trigger.appendChild(ctaClose);
-    widget.appendChild(trigger);
-    chaty.appendChild(widget);
-    document.body.appendChild(chaty);
+      channelEls.forEach(function(item) {
+        item.el.style.transitionDelay = "0s";
+        // Slide off screen downward, not onto trigger button
+        item.el.style.bottom = "-" + (iconSize + 10) + "px";
+        item.el.style.opacity = "0";
+        item.el.style.pointerEvents = "none";
+      });
 
-    // Toggle open/close
-    function toggle() {
-      var isOpen = widget.classList.contains("chaty-open");
-
-      if (isOpen) {
-        // Close the widget - just fade out, don't move anything
-        widget.classList.remove("chaty-open");
-        var items = channelList.querySelectorAll(".chaty-channel");
-        items.forEach(function (item) {
-          item.style.transition = "0.25s ease";
-          item.style.opacity = "0";
-          item.style.pointerEvents = "none";
-        });
-      } else {
-        // Open the widget - just fade in, don't move anything
-        widget.classList.add("chaty-open");
-        var items = channelList.querySelectorAll(".chaty-channel");
-        items.forEach(function (item, idx) {
-          item.style.transition = "0.3s ease " + idx * 0.06 + "s";
-          item.style.opacity = "1";
-          item.style.pointerEvents = "auto";
-          item.style.zIndex = "10003";
-        });
-
-        // Auto-close after 30 seconds
-        setTimeout(function() {
-          if (widget.classList.contains("chaty-open")) {
-            toggle();
-          }
-        }, 30000);
+      if (autoCloseTimer) {
+        clearTimeout(autoCloseTimer);
+        autoCloseTimer = null;
       }
     }
 
-    // Button click handlers - simple toggle
-    ctaMainBtn.onclick = function() {
-      toggle();
-      return false;
+    triggerEl.onclick = function(e) {
+      e.stopPropagation();
+      if (isOpen) {
+        closeWidget();
+      } else {
+        openWidget();
+      }
     };
 
-    ctaCloseBtn.onclick = function() {
-      toggle();
-      return false;
-    };
+    // Close when clicking elsewhere on the page
+    document.addEventListener("click", function(e) {
+      if (isOpen && !triggerEl.contains(e.target)) {
+        // Check if click was on a channel icon
+        var onChannel = channelEls.some(function(item) {
+          return item.el.contains(e.target);
+        });
+        if (!onChannel) {
+          closeWidget();
+        }
+      }
+    });
   }
 
   // Initialize when DOM ready
