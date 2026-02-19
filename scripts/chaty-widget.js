@@ -147,23 +147,22 @@
       var isOpen = widget.classList.contains("chaty-open");
 
       if (isOpen) {
-        // Close the widget - collapse items upward without creating gap
+        // Close the widget - just fade out, don't move anything
         widget.classList.remove("chaty-open");
         var items = channelList.querySelectorAll(".chaty-channel");
         items.forEach(function (item) {
           item.style.transition = "0.25s ease";
-          item.style.bottom = "-100px";
           item.style.opacity = "0";
+          item.style.pointerEvents = "none";
         });
       } else {
-        // Open the widget
+        // Open the widget - just fade in, don't move anything
         widget.classList.add("chaty-open");
         var items = channelList.querySelectorAll(".chaty-channel");
         items.forEach(function (item, idx) {
-          var offset = (items.length - idx) * itemHeight + 4;
           item.style.transition = "0.3s ease " + idx * 0.06 + "s";
-          item.style.bottom = offset + "px";
           item.style.opacity = "1";
+          item.style.pointerEvents = "auto";
           item.style.zIndex = "10003";
         });
 
