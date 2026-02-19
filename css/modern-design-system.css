@@ -820,20 +820,35 @@ a:hover {
         padding: var(--spacing-2xl) 15px !important;
     }
 
-    /* Service cards, expertise boxes, and content containers */
+    /* Service cards, expertise boxes, and all content containers */
     .service-card,
     .expertise-box,
     .cta-box,
+    .topic-section,
+    .highlight-feature,
+    .content-section,
+    .cta-inline,
     [style*="padding: var(--spacing-2xl)"],
-    [style*="padding: var(--spacing-lg)"] {
+    [style*="padding: var(--spacing-lg)"],
+    [style*="padding: var(--spacing-3xl)"],
+    [style*="background:"],
+    [style*="border-radius"] {
         padding: 20px !important;
     }
 
-    /* Content sections inside boxes */
-    .topic-section,
-    .highlight-feature,
-    .content-section {
-        padding: 20px !important;
+    /* Page hero and content areas */
+    .page-hero {
+        padding: var(--spacing-2xl) 15px !important;
+    }
+
+    /* Card grids */
+    .services-grid,
+    .service-categories-grid,
+    .responsive-grid-2,
+    .responsive-grid-3 {
+        gap: var(--spacing-lg) !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
 }
 
