@@ -169,19 +169,15 @@
       }
     }
 
-    // Trigger button toggles open/close
-    ctaMainBtn.addEventListener("click", function(e) {
+    // Both buttons toggle the widget
+    function handleButtonClick(e) {
+      e.preventDefault();
       e.stopPropagation();
       toggle();
-    });
+    }
 
-    // Close button closes the widget
-    ctaCloseBtn.addEventListener("click", function(e) {
-      e.stopPropagation();
-      if (widget.classList.contains("chaty-open")) {
-        toggle();
-      }
-    });
+    ctaMainBtn.addEventListener("click", handleButtonClick);
+    ctaCloseBtn.addEventListener("click", handleButtonClick);
   }
 
   // Initialize when DOM ready

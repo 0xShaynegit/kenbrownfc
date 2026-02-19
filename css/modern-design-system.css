@@ -845,11 +845,13 @@ a:hover {
 
     /* Prevent navbar brand from wrapping on mobile */
     .navbar-brand {
-        font-size: var(--text-sm) !important;
-        max-width: 180px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        font-size: 0.85rem !important;
+        max-width: calc(100% - 60px);
+    }
+
+    /* Improve navbar visibility on mobile before scroll */
+    .navbar {
+        background: rgba(10, 25, 47, 0.85) !important;
     }
 
     /* Card grids */
