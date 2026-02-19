@@ -635,7 +635,7 @@
             }
         });
 
-        // --- Desktop mega menu: ARIA state sync ---
+        // --- Desktop mega menu: ARIA state sync + click-outside close ---
         if (servicesTrigger && navHasMega) {
             navHasMega.addEventListener('mouseenter', () => {
                 servicesTrigger.setAttribute('aria-expanded', 'true');
@@ -648,6 +648,13 @@
             });
             navHasMega.addEventListener('focusout', e => {
                 if (!navHasMega.contains(e.relatedTarget)) {
+                    servicesTrigger.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Close mega menu when clicking outside (important for tablet/iPad)
+            document.addEventListener('click', e => {
+                if (!navHasMega.contains(e.target) && !servicesTrigger.contains(e.target)) {
                     servicesTrigger.setAttribute('aria-expanded', 'false');
                 }
             });
