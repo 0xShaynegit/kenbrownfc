@@ -65,10 +65,13 @@
     var widget = document.createElement("div");
     widget.className = "chaty-widget left-position";
 
-    // Channel list (responsive height)
+    // Channel list (responsive height) - positioned absolutely to prevent layout shift
     var channelList = document.createElement("div");
     channelList.className = "chaty-channel-list";
     var itemHeight = isMobile ? 50 : 62;
+    channelList.style.position = "absolute";
+    channelList.style.bottom = "60px";
+    channelList.style.right = "0";
     channelList.style.height = (channels.length * itemHeight + 10) + "px";
     channelList.style.overflow = "visible";
     channelList.style.zIndex = "10002";
@@ -109,9 +112,11 @@
 
     widget.appendChild(channelList);
 
-    // Trigger area
+    // Trigger area - keep at bottom and prevent layout shift
     var trigger = document.createElement("div");
     trigger.className = "chaty-i-trigger";
+    trigger.style.position = "relative";
+    trigger.style.zIndex = "10001";
 
     // Main button – no animation class
     var ctaMain = document.createElement("div");
