@@ -293,7 +293,7 @@
         }
 
         .insurance-card {
-            padding: var(--spacing-2xl);
+            padding: var(--spacing-xl);
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-sm);
         }
@@ -307,71 +307,85 @@
             background: var(--neutral-light-gray);
         }
 
-        .insurance-card h4 {
-            color: var(--primary-navy);
-            font-size: var(--text-xl);
-            margin-bottom: var(--spacing-2xl);
-            font-weight: 700;
-        }
-
-        .insurance-field {
-            margin-bottom: var(--spacing-lg);
+        .insurance-card-header {
             display: flex;
             align-items: center;
             gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .insurance-card h4 {
+            color: var(--primary-navy);
+            font-size: var(--text-xl);
+            font-weight: 700;
+            margin: 0;
+            flex: 1;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .radio-option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--accent-gold);
+        }
+
+        .radio-option label {
+            cursor: pointer;
+            margin: 0;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .insurance-fields-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        .insurance-field {
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
         }
 
         .insurance-field label {
             color: var(--text-dark);
-            font-weight: 500;
-            min-width: 180px;
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-md);
-            cursor: pointer;
-        }
-
-        .insurance-field input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-            accent-color: var(--accent-gold);
+            font-weight: 600;
+            font-size: var(--text-sm);
         }
 
         .insurance-field input[type="text"],
         .insurance-field select {
-            flex: 1;
+            width: 100%;
             padding: var(--spacing-sm) var(--spacing-md);
-            border: 1px solid var(--neutral-gray);
-            border-radius: var(--radius-sm);
+            border: none;
+            border-bottom: 2px solid var(--primary-navy);
+            border-radius: 0;
             font-size: var(--text-base);
             font-family: var(--font-sans);
+            background: transparent;
         }
 
         .insurance-field input[type="text"]::placeholder {
-            color: var(--neutral-dark-gray);
+            color: transparent;
         }
 
-        .checkbox-wrapper {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .checkbox-wrapper input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-            accent-color: var(--accent-gold);
-        }
-
-        .checkbox-wrapper label {
-            color: var(--text-dark);
-            font-weight: 500;
-            cursor: pointer;
-            margin: 0;
-            min-width: auto;
+        .insurance-field input[type="text"]:focus {
+            outline: none;
+            border-bottom-color: var(--accent-gold);
         }
 
         .na-text {
@@ -381,18 +395,22 @@
         }
 
         @media (max-width: 768px) {
-            .insurance-field {
+            .insurance-card {
+                padding: var(--spacing-lg);
+            }
+
+            .insurance-card-header {
                 flex-direction: column;
                 align-items: flex-start;
             }
 
-            .insurance-field label {
-                min-width: auto;
+            .insurance-fields-row {
+                grid-template-columns: 1fr;
             }
 
-            .insurance-field input[type="text"],
-            .insurance-field select {
+            .radio-group {
                 width: 100%;
+                margin-top: var(--spacing-md);
             }
         }
     </style>
@@ -632,123 +650,188 @@
                 <div class="insurance-checklist">
                     <!-- Life Insurance Card -->
                     <div class="insurance-card">
-                        <h4>Life Insurance</h4>
-                        <div class="checkbox-wrapper">
-                            <input type="checkbox" id="life-have">
-                            <label for="life-have">Do you have this?</label>
+                        <div class="insurance-card-header">
+                            <h4>Life Insurance</h4>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="life-yes" name="life" value="yes">
+                                    <label for="life-yes">Yes</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="life-no" name="life" value="no">
+                                    <label for="life-no">No</label>
+                                </div>
+                            </div>
                         </div>
                         <div class="insurance-field">
                             <label for="life-amount">Coverage Amount</label>
-                            <input type="text" id="life-amount" placeholder="$________">
-                        </div>
-                        <div class="insurance-field">
-                            <span class="na-text">N/A</span>
+                            <input type="text" id="life-amount" placeholder="__________________">
                         </div>
                     </div>
 
                     <!-- Health Insurance Card -->
                     <div class="insurance-card">
-                        <h4>Health Insurance</h4>
-                        <div class="checkbox-wrapper">
-                            <input type="checkbox" id="health-have">
-                            <label for="health-have">Do you have this?</label>
+                        <div class="insurance-card-header">
+                            <h4>Health Insurance</h4>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="health-yes" name="health" value="yes">
+                                    <label for="health-yes">Yes</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="health-no" name="health" value="no">
+                                    <label for="health-no">No</label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="insurance-field">
-                            <label for="health-amount">Coverage Amount</label>
-                            <input type="text" id="health-amount" placeholder="$________">
-                        </div>
-                        <div class="insurance-field">
-                            <label for="health-deductible">Deductible Amount</label>
-                            <input type="text" id="health-deductible" placeholder="$________">
+                        <div class="insurance-fields-row">
+                            <div class="insurance-field">
+                                <label for="health-amount">Coverage Amount</label>
+                                <input type="text" id="health-amount" placeholder="__________________">
+                            </div>
+                            <div class="insurance-field">
+                                <label for="health-deductible">Deductible</label>
+                                <input type="text" id="health-deductible" placeholder="__________________">
+                            </div>
                         </div>
                     </div>
 
                     <!-- Disability Insurance Card -->
                     <div class="insurance-card">
-                        <h4>Disability Insurance</h4>
-                        <div class="checkbox-wrapper">
-                            <input type="checkbox" id="disability-have">
-                            <label for="disability-have">Do you have this?</label>
+                        <div class="insurance-card-header">
+                            <h4>Disability Insurance</h4>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="disability-yes" name="disability" value="yes">
+                                    <label for="disability-yes">Yes</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="disability-no" name="disability" value="no">
+                                    <label for="disability-no">No</label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="insurance-field">
-                            <label for="disability-amount">Monthly Benefit Amount</label>
-                            <input type="text" id="disability-amount" placeholder="$________/month">
-                        </div>
-                        <div class="insurance-field">
-                            <label for="disability-deductible">Elimination Period</label>
-                            <input type="text" id="disability-deductible" placeholder="$________">
+                        <div class="insurance-fields-row">
+                            <div class="insurance-field">
+                                <label for="disability-amount">Monthly Benefit</label>
+                                <input type="text" id="disability-amount" placeholder="__________________">
+                            </div>
+                            <div class="insurance-field">
+                                <label for="disability-deductible">Elimination Period</label>
+                                <input type="text" id="disability-deductible" placeholder="__________________">
+                            </div>
                         </div>
                     </div>
 
                     <!-- Home/Property Insurance Card -->
                     <div class="insurance-card">
-                        <h4>Home/Property Insurance</h4>
-                        <div class="checkbox-wrapper">
-                            <input type="checkbox" id="home-have">
-                            <label for="home-have">Do you have this?</label>
+                        <div class="insurance-card-header">
+                            <h4>Home/Property Insurance</h4>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="home-yes" name="home" value="yes">
+                                    <label for="home-yes">Yes</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="home-no" name="home" value="no">
+                                    <label for="home-no">No</label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="insurance-field">
-                            <label for="home-amount">Coverage Amount</label>
-                            <input type="text" id="home-amount" placeholder="$________">
-                        </div>
-                        <div class="insurance-field">
-                            <label for="home-deductible">Deductible Amount</label>
-                            <input type="text" id="home-deductible" placeholder="$________">
+                        <div class="insurance-fields-row">
+                            <div class="insurance-field">
+                                <label for="home-amount">Coverage Amount</label>
+                                <input type="text" id="home-amount" placeholder="__________________">
+                            </div>
+                            <div class="insurance-field">
+                                <label for="home-deductible">Deductible</label>
+                                <input type="text" id="home-deductible" placeholder="__________________">
+                            </div>
                         </div>
                     </div>
 
                     <!-- Auto Insurance Card -->
                     <div class="insurance-card">
-                        <h4>Auto Insurance</h4>
-                        <div class="checkbox-wrapper">
-                            <input type="checkbox" id="auto-have">
-                            <label for="auto-have">Do you have this?</label>
+                        <div class="insurance-card-header">
+                            <h4>Auto Insurance</h4>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="auto-yes" name="auto" value="yes">
+                                    <label for="auto-yes">Yes</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="auto-no" name="auto" value="no">
+                                    <label for="auto-no">No</label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="insurance-field">
-                            <label for="auto-amount">Liability Coverage Limit</label>
-                            <input type="text" id="auto-amount" placeholder="$________">
-                        </div>
-                        <div class="insurance-field">
-                            <label for="auto-deductible">Deductible Amount</label>
-                            <input type="text" id="auto-deductible" placeholder="$________">
+                        <div class="insurance-fields-row">
+                            <div class="insurance-field">
+                                <label for="auto-amount">Coverage Amount</label>
+                                <input type="text" id="auto-amount" placeholder="__________________">
+                            </div>
+                            <div class="insurance-field">
+                                <label for="auto-deductible">Deductible</label>
+                                <input type="text" id="auto-deductible" placeholder="__________________">
+                            </div>
                         </div>
                     </div>
 
                     <!-- Umbrella Liability Insurance Card -->
                     <div class="insurance-card">
-                        <h4>Umbrella Liability Insurance</h4>
-                        <div class="checkbox-wrapper">
-                            <input type="checkbox" id="umbrella-have">
-                            <label for="umbrella-have">Do you have this?</label>
+                        <div class="insurance-card-header">
+                            <h4>Umbrella Liability</h4>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="umbrella-yes" name="umbrella" value="yes">
+                                    <label for="umbrella-yes">Yes</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="umbrella-no" name="umbrella" value="no">
+                                    <label for="umbrella-no">No</label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="insurance-field">
-                            <label for="umbrella-amount">Coverage Amount</label>
-                            <input type="text" id="umbrella-amount" placeholder="$________">
-                        </div>
-                        <div class="insurance-field">
-                            <label for="umbrella-deductible">Deductible Amount</label>
-                            <input type="text" id="umbrella-deductible" placeholder="$________">
+                        <div class="insurance-fields-row">
+                            <div class="insurance-field">
+                                <label for="umbrella-amount">Coverage Amount</label>
+                                <input type="text" id="umbrella-amount" placeholder="__________________">
+                            </div>
+                            <div class="insurance-field">
+                                <label for="umbrella-deductible">Deductible</label>
+                                <input type="text" id="umbrella-deductible" placeholder="__________________">
+                            </div>
                         </div>
                     </div>
 
                     <!-- Other Insurance Card -->
                     <div class="insurance-card">
-                        <h4>Other Insurance</h4>
-                        <div class="checkbox-wrapper">
-                            <input type="checkbox" id="other-have">
-                            <label for="other-have">Do you have other insurance?</label>
+                        <div class="insurance-card-header">
+                            <h4>Other Insurance</h4>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="other-yes" name="other" value="yes">
+                                    <label for="other-yes">Yes</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="other-no" name="other" value="no">
+                                    <label for="other-no">No</label>
+                                </div>
+                            </div>
                         </div>
                         <div class="insurance-field">
                             <label for="other-type">Type</label>
-                            <input type="text" id="other-type" placeholder="____________________">
+                            <input type="text" id="other-type" placeholder="__________________">
                         </div>
-                        <div class="insurance-field">
-                            <label for="other-amount">Coverage Amount</label>
-                            <input type="text" id="other-amount" placeholder="$________">
-                        </div>
-                        <div class="insurance-field">
-                            <label for="other-deductible">Deductible Amount</label>
-                            <input type="text" id="other-deductible" placeholder="$________">
+                        <div class="insurance-fields-row">
+                            <div class="insurance-field">
+                                <label for="other-amount">Coverage Amount</label>
+                                <input type="text" id="other-amount" placeholder="__________________">
+                            </div>
+                            <div class="insurance-field">
+                                <label for="other-deductible">Deductible</label>
+                                <input type="text" id="other-deductible" placeholder="__________________">
+                            </div>
                         </div>
                     </div>
                 </div>
