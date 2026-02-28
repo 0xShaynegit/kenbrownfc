@@ -1,7 +1,3 @@
-# Redirect non-www to www (canonicalization)
-http://kenbrownfc.com/* http://www.kenbrownfc.com/:splat 301
-https://kenbrownfc.com/* https://www.kenbrownfc.com/:splat 301
-
 # Redirect old/phantom URLs with proper 404
 /blog/ 404
 /category/* 404
