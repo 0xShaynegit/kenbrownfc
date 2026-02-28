@@ -1,6 +1,1 @@
-# Redirect old/phantom URLs with proper 404
-/blog/ 404
-/category/* 404
-
-# Handle index.html requests
 /index.html / 301
