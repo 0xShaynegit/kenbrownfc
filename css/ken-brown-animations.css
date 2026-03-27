@@ -1,0 +1,251 @@
+/**
+ * Ken Brown Financial Consultant - Animation Styles
+ * Conversion-focused animations with accessibility considerations
+ */
+
+/* ============================================================
+   SCROLL PROGRESS BAR
+   ============================================================ */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-gold, #d4a574) 0%, var(--accent-warm, #ff8c42) 100%);
+  z-index: 9998;
+  width: 0%;
+  box-shadow: 0 0 10px rgba(212, 165, 116, 0.4);
+}
+
+/* ============================================================
+   HERO SECTION ANIMATIONS
+   ============================================================ */
+.hero-title {
+  will-change: opacity, transform;
+}
+
+.hero-subtitle {
+  will-change: opacity, transform;
+}
+
+.hero-buttons {
+  will-change: opacity, transform;
+}
+
+.hero-buttons .btn-primary {
+  position: relative;
+  will-change: transform, box-shadow;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Ripple effect for buttons */
+.btn-primary .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: ripple-animation 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ============================================================
+   SERVICE CARDS ANIMATIONS
+   ============================================================ */
+.service-card {
+  will-change: opacity, transform;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.service-card.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Service card is a unified clickable element - no hover enhancement */
+.service-card:hover {
+  /* Hover effect handled by original CSS only */
+}
+
+/* ============================================================
+   ABOUT SECTION ANIMATIONS
+   ============================================================ */
+.ken-image img {
+  will-change: transform;
+  filter: brightness(1);
+  transition: filter 0.3s ease;
+}
+
+.ken-image img:hover {
+  filter: brightness(1.05);
+}
+
+.ken-bio {
+  will-change: opacity;
+}
+
+.ken-bio.animated {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* ============================================================
+   TRUST SIGNALS - GLOW PULSE
+   ============================================================ */
+.location-badge {
+  will-change: box-shadow;
+  transition: all 0.3s ease;
+}
+
+.location-badge:hover {
+  box-shadow: 0 0 20px rgba(212, 165, 116, 0.4);
+  transform: scale(1.05);
+}
+
+.expertise-box {
+  will-change: box-shadow;
+  transition: all 0.3s ease;
+}
+
+.expertise-box:hover {
+  box-shadow: 0 0 20px rgba(212, 165, 116, 0.3);
+}
+
+/* Trust signal glow animation */
+@keyframes trustGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(212, 165, 116, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(212, 165, 116, 0.4);
+  }
+}
+
+/* ============================================================
+   CONTACT SECTION CTA ANIMATIONS
+   ============================================================ */
+#contact .btn-primary {
+  will-change: opacity, transform, box-shadow;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+#contact .btn-primary.animated {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#contact .btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============================================================
+   FADE IN ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================ */
+@media (max-width: 768px) {
+  .scroll-progress-bar {
+    height: 2px;
+  }
+
+  .service-card {
+    margin-bottom: 1rem;
+  }
+
+  .ken-profile {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* ============================================================
+   ACCESSIBILITY - RESPECT PREFERS-REDUCED-MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .scroll-progress-bar,
+  .hero-title,
+  .hero-subtitle,
+  .hero-buttons,
+  .service-card,
+  .ken-image,
+  .ken-bio,
+  .location-badge,
+  .expertise-box,
+  #contact .btn-primary {
+    will-change: auto;
+  }
+}
+
+/* ============================================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================================ */
+.gpu-accelerate {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Smooth font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

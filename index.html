@@ -9,17 +9,19 @@
 <link rel="canonical" href="https://www.kenbrownfc.com/"/>
 <link href="./css/modern-design-system.css" rel="stylesheet"/>
 <link href="./css/chaty-front.min.css" id="chaty-front-css-css" media="all" rel="stylesheet"/>
+<link href="./css/ken-brown-animations.css" rel="stylesheet"/>
 <!-- Organization + Person Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "FinancialService",
+      "@type": ["FinancialService", "LocalBusiness"],
       "@id": "https://www.kenbrownfc.com/#organization",
       "name": "Ken Brown Financial Consultant",
       "url": "https://www.kenbrownfc.com/",
       "logo": "https://www.kenbrownfc.com/images/kenbrownfc%20ken%20brown%20financial%20consultant%204.webp",
+      "image": "https://www.kenbrownfc.com/images/kenbrownfc%20ken%20brown%20financial%20consultant%204.webp",
       "description": "Expert wealth management for American expats in Thailand. Specializing in US/Thailand tax treaty optimization, retirement planning, estate planning, and asset protection.",
       "areaServed": ["Thailand", "Southeast Asia", "Worldwide"],
       "sameAs": [
@@ -34,8 +36,26 @@
       },
       "address": {
         "@type": "PostalAddress",
-        "addressCountry": "TH"
-      }
+        "addressLocality": "Bangkok",
+        "addressRegion": "Bangkok",
+        "addressCountry": "TH",
+        "streetAddress": "Thailand"
+      },
+      "priceRange": "$$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday"],
+          "opens": "10:00",
+          "closes": "17:00"
+        }
+      ]
     },
     {
       "@type": "Person",
@@ -49,6 +69,110 @@
         "https://www.linkedin.com/in/ken-brown-59438192/"
       ],
       "description": "Wealth management consultant with 20+ years of experience specializing in serving American expats and international business professionals in Thailand."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kenbrownfc.com/#service-retirement-planning",
+      "name": "Retirement Planning for American Expats",
+      "description": "Comprehensive retirement planning for American expats in Thailand, including Social Security optimization, tax-efficient withdrawal strategies, and lifestyle planning for retirement abroad.",
+      "provider": {
+        "@id": "https://www.kenbrownfc.com/#organization"
+      },
+      "areaServed": ["Thailand", "Southeast Asia"],
+      "availableLanguage": ["English"]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kenbrownfc.com/#service-tax-optimization",
+      "name": "US-Thailand Tax Optimization",
+      "description": "Strategic tax planning leveraging the US-Thailand tax treaty to minimize tax burden. Includes FEIE, FTC, FBAR, and FATCA compliance for American expats.",
+      "provider": {
+        "@id": "https://www.kenbrownfc.com/#organization"
+      },
+      "areaServed": ["Thailand", "Southeast Asia"],
+      "availableLanguage": ["English"]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kenbrownfc.com/#service-estate-planning",
+      "name": "Estate Planning for Expats",
+      "description": "Cross-border estate planning addressing both US and Thai legal requirements. Ensures proper asset protection and inheritance according to your wishes.",
+      "provider": {
+        "@id": "https://www.kenbrownfc.com/#organization"
+      },
+      "areaServed": ["Thailand", "Southeast Asia"],
+      "availableLanguage": ["English"]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kenbrownfc.com/#service-wealth-management",
+      "name": "Wealth Management Services",
+      "description": "Comprehensive wealth management including investment strategies, asset allocation, property management, and financial analysis for high-net-worth American expats.",
+      "provider": {
+        "@id": "https://www.kenbrownfc.com/#organization"
+      },
+      "areaServed": ["Thailand", "Southeast Asia"],
+      "availableLanguage": ["English"]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.kenbrownfc.com/#service-compliance",
+      "name": "FBAR & FATCA Compliance",
+      "description": "Expert guidance on Foreign Bank Account Report (FBAR) and Foreign Account Tax Compliance Act (FATCA) requirements for American expats maintaining accounts in Thailand.",
+      "provider": {
+        "@id": "https://www.kenbrownfc.com/#organization"
+      },
+      "areaServed": ["Thailand", "Southeast Asia"],
+      "availableLanguage": ["English"]
+    }
+  ]
+}
+</script>
+<!-- FAQ Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do American expats optimize US and Thailand taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "American expats in Thailand can leverage the US-Thailand tax treaty to optimize their tax situation. This includes understanding Foreign Earned Income Exclusion (FEIE), Foreign Tax Credits (FTC), and tax-efficient investment strategies. Ken Brown specializes in helping expats structure their finances to minimize tax burden while remaining compliant with both US and Thai tax authorities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best retirement strategy for American expats in Thailand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Retirement planning for expats requires a multi-jurisdictional approach. Strategies include optimizing Social Security benefits, managing retirement account withdrawals, understanding healthcare options (Medicare abroad, Thai insurance), and tax-efficient withdrawal sequencing. Ken Brown develops personalized retirement plans that account for both US and Thai regulations, currency fluctuations, and lifestyle goals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an expat financial advisor if I live in Thailand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. American expats face unique financial complexities including FBAR/FATCA compliance, dual-country tax obligations, currency exposure, and limited access to US financial services. A specialized expat financial advisor ensures compliance, optimizes tax efficiency, protects assets, and provides strategic wealth planning tailored to the expat lifestyle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is FATCA and why does it matter for American expats?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FATCA (Foreign Account Tax Compliance Act) requires American expats to report foreign financial accounts exceeding $10,000 to the IRS. Failure to comply can result in severe penalties. Ken Brown ensures clients maintain proper FATCA compliance and understand their reporting obligations for bank accounts, investments, and other financial assets held in Thailand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I protect my assets as an American expat in Thailand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Asset protection strategies for expats include proper estate planning, understanding Thai inheritance laws, insurance coverage, entity structuring, and international tax planning. Ken Brown works with legal specialists to develop comprehensive asset protection plans that safeguard wealth across multiple jurisdictions while maintaining regulatory compliance."
+      }
     }
   ]
 }
@@ -147,14 +271,25 @@
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
+            /* Hover effect removed - card is unified clickable element */
         }
 
         .service-icon {
             font-size: 3rem;
             margin-bottom: var(--spacing-md);
             line-height: 1;
+            filter: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+            transition: none !important;
+        }
+
+        a:hover .service-icon,
+        .service-card:hover .service-icon {
+            filter: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+            box-shadow: none !important;
         }
 
         .service-title {
@@ -281,6 +416,38 @@
         a:has(> div[style*="cursor: pointer"]):hover div {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
+        }
+
+        /* Unified card hover - whole card moves together, no separate icon animation */
+        a .service-card {
+            transform: none;
+            box-shadow: var(--shadow-md);
+        }
+
+        a:hover .service-card {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Icon stays fixed in place */
+        a:hover .service-icon {
+            transform: none !important;
+        }
+
+        /* Top row cards - unified movement */
+        a > div[style*="background: var(--neutral-white)"] {
+            transform: none;
+            box-shadow: var(--shadow-md);
+        }
+
+        a:hover > div[style*="background: var(--neutral-white)"] {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Icon in top row stays fixed */
+        a:hover > div[style*="background: var(--neutral-white)"] > div[style*="font-size"] {
+            transform: none !important;
         }
 
         /* Responsive 2-col grid used for Expertise and Why Choose Ken */
@@ -503,7 +670,7 @@
 <div class="service-categories-grid">
 <!-- Personal Financial Services -->
 <a href="pages/getting-started-guide.html" style="text-decoration: none; color: inherit;">
-<div style="background: var(--neutral-white); padding: var(--spacing-2xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border-top: 4px solid var(--accent-gold); transition: all var(--transition-base); cursor: pointer; display: flex; flex-direction: column; min-height: 280px;">
+<div style="background: var(--neutral-white); padding: var(--spacing-2xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border-top: 4px solid var(--accent-gold); display: flex; flex-direction: column; min-height: 280px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
 <div style="font-size: 2.5rem; margin-bottom: var(--spacing-md); text-align: center;">💼</div>
 <h3 style="color: var(--primary-navy); text-align: center; margin-bottom: var(--spacing-md); font-size: var(--text-xl);">Personal Financial Services</h3>
 <ul class="feature-list" style="text-align: left;">
@@ -517,7 +684,7 @@
 </a>
 <!-- Property & Visa Services -->
 <a href="pages/property-real-estate.html" style="text-decoration: none; color: inherit;">
-<div style="background: var(--neutral-white); padding: var(--spacing-2xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border-top: 4px solid var(--accent-gold); transition: all var(--transition-base); cursor: pointer;">
+<div style="background: var(--neutral-white); padding: var(--spacing-2xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border-top: 4px solid var(--accent-gold); transition: transform 0.3s ease, box-shadow 0.3s ease; min-height: 280px; display: flex; flex-direction: column;">
 <div style="font-size: 2.5rem; margin-bottom: var(--spacing-md); text-align: center;">🏠</div>
 <h3 style="color: var(--primary-navy); text-align: center; margin-bottom: var(--spacing-md); font-size: var(--text-xl);">Property &amp; Visa Services</h3>
 <ul class="feature-list" style="text-align: left;">
@@ -531,7 +698,7 @@
 </a>
 <!-- Corporate Services -->
 <a href="pages/corporate-services.html" style="text-decoration: none; color: inherit;">
-<div style="background: var(--neutral-white); padding: var(--spacing-2xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border-top: 4px solid var(--accent-gold); transition: all var(--transition-base); cursor: pointer;">
+<div style="background: var(--neutral-white); padding: var(--spacing-2xl); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border-top: 4px solid var(--accent-gold); transition: transform 0.3s ease, box-shadow 0.3s ease; min-height: 280px; display: flex; flex-direction: column;">
 <div style="font-size: 2.5rem; margin-bottom: var(--spacing-md); text-align: center;">🏢</div>
 <h3 style="color: var(--primary-navy); text-align: center; margin-bottom: var(--spacing-md); font-size: var(--text-xl);">Corporate Services</h3>
 <ul class="feature-list" style="text-align: left;">
@@ -897,5 +1064,7 @@
 <script src="./scripts/kb-navigation-global.js"></script>
 <!-- Chaty Floating Contact Widget -->
 <script src="./scripts/chaty-widget.js"></script>
+<!-- Conversion-Focused Animations -->
+<script src="./scripts/ken-brown-animations.js"></script>
 </body>
 </html>
