@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /blog/
+Disallow: /category/
 
 Sitemap: https://www.kenbrownfc.com/sitemap.xml
