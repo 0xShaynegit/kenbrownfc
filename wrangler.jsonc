@@ -8,14 +8,3 @@
     "directory": "./"
   },
 
-  "routes": [
-    {
-      "pattern": "www.kenbrownfc.com/*",
-      "zone_name": "kenbrownfc.com"
-    },
-    {
-      "pattern": "kenbrownfc.com/*",
-      "zone_name": "kenbrownfc.com"
-    }
-  ]
-}
