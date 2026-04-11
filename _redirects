@@ -1,5 +1,2 @@
-/index.html / 301
-
-/* Phantom URLs - return 404 */
-/blog/* 404
-/category/* 404
+# Phantom URLs handled by worker - these routes do not exist
+# Intentionally blank - 404s are handled by the worker.js
