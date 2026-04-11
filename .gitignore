@@ -1,7 +1,5 @@
-# Local development tools
-flatten_site.py
-fix_links.py
-commit.bat
+# Development directory (non-standard files)
+.md/
 
 # Claude Code
 .claude/
