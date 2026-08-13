@@ -1,4 +1,4 @@
-Site: https://www.kenbrownfc.com/
+Site: https://kenbrownfc.com/
 Structure: index.html at root, subpages in /pages/<slug>.html
 Source: Static export; this folder is the single source of truth (no CMS).
 Editing: All changes are made locally, then pushed to GitHub and deployed via Cloudflare Pages.

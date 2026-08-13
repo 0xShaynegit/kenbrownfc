@@ -3,4 +3,4 @@ Allow: /
 Disallow: /blog/
 Disallow: /category/
 
-Sitemap: https://www.kenbrownfc.com/sitemap.xml
+Sitemap: https://kenbrownfc.com/sitemap.xml
